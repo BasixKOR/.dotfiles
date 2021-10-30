@@ -47,7 +47,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-## Fix home/end/delete
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
+# Fix keybindings
+bindkey  "^[[H"    beginning-of-line # Home
+bindkey  "^[[F"    end-of-line       # End
+bindkey  "^[[3~"   delete-char       # Delete
+bindkey  "^[[1;5C" forward-word      # Ctrl + ->
+bindkey  "^[[1;5D" backward-word     # Ctrl + <-
