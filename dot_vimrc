@@ -382,7 +382,7 @@ endtry
 " My vim theme
 "
 set termguicolors
-colorscheme monokai_prolet ayucolor = 'dark'
+colorscheme monokai_pro
 
 function! s:fg(item, color)
   execute printf('highlight %s guifg=%s', a:item, a:color)
