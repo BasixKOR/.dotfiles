@@ -4,3 +4,6 @@
 .zinit/services
 .zinit/snippets
 README.md
+{{ if ne .chezmoi.os "windows" }}
+AppData/Local/nvim/init.vim
+{{ end }}
