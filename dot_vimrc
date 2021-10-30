@@ -195,7 +195,7 @@ try
 
   " IDE
   if s:use_coc
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-git', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
