@@ -33,6 +33,7 @@ zinit light simnalamburt/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light gomjellie/zsh-hangul
 zinit light zpm-zsh/clipboard
+zinit light lukechilds/zsh-nvm
 
 # history-substring-search
 bindkey '^[[A' history-substring-search-up
