@@ -31,6 +31,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light simnalamburt/zsh-expand-all
 zinit ice wait lucid; zinit light lukechilds/zsh-nvm
 
 # history-substring-search
@@ -50,3 +51,22 @@ bindkey  "^[[F"    end-of-line       # End
 bindkey  "^[[3~"   delete-char       # Delete
 bindkey  "^[[1;5C" forward-word      # Ctrl + ->
 bindkey  "^[[1;5D" backward-word     # Ctrl + <-
+
+# Set EDITOR
+if (( $+commands[nvim] )); then
+  export EDITOR=nvim
+elif (( $+commands[vim] )); then
+  export EDITOR=vim
+fi
+
+# Supercharged default commands.
+if (( $+commands[lsd] )); then
+  alias l='lsd -Al --date=relative --group-dirs=first --blocks=permission,user,size,date,name'
+  alias ll='lsd -l --date=relative --group-dirs=first --blocks=permission,user,size,date,name'
+  alias lt='lsd --tree --depth=2 --date=relative --group-dirs=first'
+else
+  alias l='ls -alh'
+  alias ll='ls -lh'
+fi
+alias mv='mv -i'
+alias cp='cp -i'
