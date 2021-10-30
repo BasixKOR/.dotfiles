@@ -5,6 +5,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ -d "~/.zinit/zmodules/Src" ]]; then
+  module_path+=( "/c/Users/basix/.zinit/zmodules/Src" )
+  zmodload zdharma/zplugin
+fi
+
 # PATH Configure
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
@@ -70,3 +75,9 @@ else
 fi
 alias mv='mv -i'
 alias cp='cp -i'
+
+
+# Chezmoi completions
+if (( $+commands[chezmoi] )); then
+  source <(chezmoi completion zsh)
+fi
