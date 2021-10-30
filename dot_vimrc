@@ -250,6 +250,8 @@ try
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/gv.vim'
 
   call plug#end()
 
