@@ -1,0 +1,31 @@
+[core]
+	editor = code --wait
+[author]
+	name = Basix
+	email = basix@basix.tech
+[user]
+	name = Basix
+	email = basix@basix.tech
+	signingkey = F7E4D4D96797603C
+[core]
+	excludesfile = ~/.gitexclude
+[pull]
+	rebase = true
+[credential]
+	helper = manager-core
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[rebase]
+	autoStash = true
+[merge]
+	conflictstyle = diff3
