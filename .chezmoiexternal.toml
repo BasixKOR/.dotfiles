@@ -4,3 +4,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+
+[".nvm"]
+    type = "archive"
+    url = "https://github.com/nvm-sh/nvm/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
