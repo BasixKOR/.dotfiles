@@ -5,9 +5,14 @@ SAVEHIST=1000
 setopt autocd extendedglob nomatch notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+source ~/.zinit/zinit.zsh
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/c/Users/basix/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+zinit ice depth=1; zinit light romkatv/powerlevel10k
