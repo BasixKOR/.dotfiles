@@ -247,6 +247,9 @@ try
   Plug 'simnalamburt/vim-mundo'
   Plug 'godlygeek/tabular'
   Plug 'justinmk/vim-dirvish'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-commentary'
 
   call plug#end()
 
