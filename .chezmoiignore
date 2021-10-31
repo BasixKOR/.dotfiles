@@ -3,5 +3,5 @@
 .zinit/polaris
 .zinit/services
 .zinit/snippets
-.zinit/zmodules
+.zinit/zmodules/**
 README.md
