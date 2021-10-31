@@ -5,3 +5,6 @@
 .zinit/snippets
 .zinit/zmodules/**
 README.md
+{{ if ne .chezmoi.os "windows" }}
+.config/git/git-prompt.sh
+{{ end }}
