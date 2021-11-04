@@ -1,0 +1,16 @@
+[interpreters.sh]
+command = "C:\\msys64\\usr\\bin\\bash.exe"
+[data.volta]
+{{ if eq .chezmoi.os "windows" }}
+variant = "windows"
+{{ else if eq .chezmoi.os "linux" }}
+variant = "linux-openssl-1.1" # FIXME: Should detect OpenSSL 1.0, 1.1 and RHEL variant: https://git.io/JP7SU
+{{ else if eq .chezmoi.os "darwin" }}
+variant = "darwin{{ if eq .chezmoi.arch "arm64" }}-aarch64{{ end }}"
+{{ end }}
+
+{{ if eq .chezmoi.os "windows" }}
+ext = ".zip"
+{{ else }}
+ext = ".tar.gz"
+{{ end }}
