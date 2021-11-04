@@ -36,7 +36,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+{{ if ne .chezmoi.os "windows" }}
 zinit ice wait lucid; zinit light lukechilds/zsh-nvm
+{{ end }}
 
 # history-substring-search
 bindkey '^[[A' history-substring-search-up
