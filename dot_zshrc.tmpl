@@ -83,3 +83,8 @@ alias cp='cp -i'
 if (( $+commands[chezmoi] )); then
   source <(chezmoi completion zsh)
 fi
+
+# direnv integration
+if (( $+commands[direnv] )); then
+  eval "$(direnv hook zsh)"
+fi
