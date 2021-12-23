@@ -88,3 +88,20 @@ fi
 if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
+
+# iTerm2 integrations
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Bun completions
+[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+
+# Bun
+export BUN_INSTALL="~/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Volta
+if [ -d "~/.volta" ]; then
+  export VOLTA_HOME="$HOME/.volta"
+  export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+

@@ -12,7 +12,11 @@
 [pull]
 	rebase = true
 [credential]
+{{- if eq .chezmoi.os "windows" }}
 	helper = manager-core
+{{- else if eq .chezmoi.os "darwin" }}
+	helper = /usr/local/share/gcm-core/git-credential-manager-core
+{{- end }}
 [init]
 	defaultBranch = main
 [filter "lfs"]
