@@ -249,6 +249,7 @@ try
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
+  Plug 'vim-scripts/ReplaceWithRegister'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/gv.vim'
 
