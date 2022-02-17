@@ -1,4 +1,8 @@
-{{ if eq .chezmoi.os "windows" }}
 Host *
+{{ if eq .chezmoi.os "windows" }}
     SecurityKeyProvider winhello.dll
+{{ else if eq .chezmoi.os "darwin" }}
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{ else }}
+    IdentityAgent ~/.1password/agent.sock
 {{ end }}
