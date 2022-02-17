@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh # Fig
+
 if [[ -d "~/.zinit/zmodules/Src" ]]; then
   module_path+=( "/c/Users/basix/.zinit/zmodules/Src" )
   zmodload zdharma/zplugin
@@ -107,3 +109,4 @@ if [[ -d "~/.volta" ]]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
