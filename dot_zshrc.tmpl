@@ -102,7 +102,7 @@ export BUN_INSTALL="~/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Volta
-if [ -d "~/.volta" ]; then
+if [[ -d "~/.volta" ]]; then
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
