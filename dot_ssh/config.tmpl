@@ -1,0 +1,4 @@
+{{ if eq .chezmoi.os "windows" }}
+Host *
+    SecurityKeyProvider winhello.dll
+{{ end }}
