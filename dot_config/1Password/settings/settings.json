@@ -1,0 +1,11 @@
+{
+  "updates.updateChannel": "NIGHTLY",
+  "security.authenticatedUnlock.enabled": true,
+  "ui.routes.lastUsedRoute": "{\"type\":\"ItemDetail\",\"content\":{\"itemListRoute\":{\"unlockedRoute\":{\"collectionUuid\":\"everything\"},\"itemListType\":{\"type\":\"AllItems\"},\"category\":null,\"sortBehavior\":null},\"itemId\":\"1\"}}",
+  "advanced.EnableDebuggingTools": false,
+  "updates.autoUpdate": true,
+  "beta.ssh.enabled": true,
+  "sshAgent.enabled": true,
+  "sshAgent.storeKeyTitles": true,
+  "developers.cliSharedLockState.enabled": true
+}

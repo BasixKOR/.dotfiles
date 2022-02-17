@@ -9,3 +9,6 @@ README.md
 .config/git/git-prompt.sh
 AppData
 {{ end }}
+{{ if ne .chezmoi.os "darwin" }}
+Library
+{{ end }}
