@@ -41,6 +41,12 @@ zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait; zinit light simnalamburt/cgitc
+zinit ice lucid wait; zinit light rupa/z
+if (( $+commands[fzf] )); then
+zinit ice lucid wait; zinit light joshskidmore/zsh-fzf-history-search
+zinit ice lucid wait; zinit light changyuheng/fz
+zinit ice lucid wait; zinit light unixorn/fzf-zsh-plugin
+fi
 {{ if ne .chezmoi.os "windows" }}
 zinit ice wait lucid; zinit light lukechilds/zsh-nvm
 {{ end }}
