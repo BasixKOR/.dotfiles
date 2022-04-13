@@ -37,10 +37,10 @@ compinit
 # Zinit plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-history-substring-search
+zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light simnalamburt/cgitc
+zinit ice lucid wait; zinit light simnalamburt/cgitc
 {{ if ne .chezmoi.os "windows" }}
 zinit ice wait lucid; zinit light lukechilds/zsh-nvm
 {{ end }}
