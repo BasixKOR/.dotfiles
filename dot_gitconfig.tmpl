@@ -7,6 +7,7 @@
 	signingkey = F7E4D4D96797603C
 [core]
 	excludesfile = ~/.gitexclude
+    pager = delta
 [pull]
 	rebase = true
 [credential]
@@ -34,3 +35,13 @@
 	conflictstyle = diff3
 [diff]
 	algorithm = histogram
+    colorMoved = default
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+
+# Delta
+[delta]
+    navigate = true  # use n and N to move between diff sections
+	theme = Monokai Extended
