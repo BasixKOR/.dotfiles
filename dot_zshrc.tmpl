@@ -90,6 +90,9 @@ else
 fi
 alias mv='mv -i'
 alias cp='cp -i'
+if (( $+commands[yarn] )); then
+  alias y='yarn'
+fi
 
 
 # Chezmoi completions
