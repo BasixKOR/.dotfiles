@@ -5,6 +5,11 @@
     stripComponents = 1
     refreshPeriod = "168h"
 
+[".tmux/plugins/tpm"]
+    type = "git-repo"
+    url = "https://github.com/tmux-plugins/tpm"
+    refreshPeriod = "168h"
+
 {{ if eq .chezmoi.os "windows" }}
 ["AppData/Local/nvim-data/site/autoload/plug.vim"]
 {{ end }}
