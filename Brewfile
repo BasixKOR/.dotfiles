@@ -39,6 +39,7 @@ brew "rustup"
 brew "topgrade"
 brew "volta"
 brew "wader/tap/fq"
+brew "age"
 
 cask "alfred"
 cask "font-neodunggeunmo"
