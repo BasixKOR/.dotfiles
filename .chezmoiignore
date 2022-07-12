@@ -16,3 +16,6 @@ Brewfile
 {{ if ne .chezmoi.os "freebsd" }}
 .porttools
 {{ end }}
+
+.chezmoiscripts/*/**
+!.chezmoiscripts/{{ .chezmoi.os }}/**
