@@ -7,7 +7,9 @@
 	signingkey = F7E4D4D96797603C
 [core]
 	excludesfile = ~/.gitexclude
+{{- if lookPath "delta" }}
 	pager = delta
+{{- end }}
 	fsmonitor = true
 [pull]
 	rebase = true
