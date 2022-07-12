@@ -1,0 +1,405 @@
+{
+    "apps": [
+        {
+            "Version": "22.00",
+            "Name": "7zip",
+            "Info": "",
+            "Updated": "2022-06-26T20:29:02.4438558+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "33.0.2",
+            "Name": "adb",
+            "Info": "",
+            "Updated": "2022-07-06T00:00:50.2747489+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.1.0-rc.1",
+            "Name": "age",
+            "Info": "",
+            "Updated": "2022-07-13T03:56:41.66922+09:00",
+            "Source": "extras"
+        },
+        {
+            "Version": "2.7.12",
+            "Name": "aws",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:12.1594073+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.21.0",
+            "Name": "bat",
+            "Info": "",
+            "Updated": "2022-05-19T06:47:56.3815022+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "5.2.0",
+            "Name": "bazel",
+            "Info": "",
+            "Updated": "2022-06-10T17:57:59.5562061+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.13.3",
+            "Name": "broot",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:14.6801595+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.14.0",
+            "Name": "butane",
+            "Info": "",
+            "Updated": "2022-02-04T12:13:57.4694341+09:00",
+            "Source": "extras"
+        },
+        {
+            "Version": "4.6.1",
+            "Name": "ccache",
+            "Info": "",
+            "Updated": "2022-05-19T06:48:14.3278803+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.18.1",
+            "Name": "chezmoi",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:16.3196965+09:00",
+            "Source": "twpayne"
+        },
+        {
+            "Version": "2022.6.3",
+            "Name": "cloudflared",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:20.1832996+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "9.5.6",
+            "Name": "croc",
+            "Info": "",
+            "Updated": "2022-05-29T02:48:16.813831+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "7.84.0_3",
+            "Name": "curl",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:23.585011+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.13.0",
+            "Name": "delta",
+            "Info": "",
+            "Updated": "2022-05-19T06:48:48.1607227+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.23.2",
+            "Name": "deno",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:27.9440986+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.32.1",
+            "Name": "direnv",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:32.6929736+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.1.0",
+            "Name": "dog",
+            "Info": "",
+            "Updated": "2021-11-15T21:41:31.8979038+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.104.0",
+            "Name": "eksctl",
+            "Info": "",
+            "Updated": "2022-07-06T00:01:36.5633489+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.13.4",
+            "Name": "elixir",
+            "Info": "",
+            "Updated": "2022-04-13T12:57:52.6184202+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "25.0.2",
+            "Name": "erlang",
+            "Info": "",
+            "Updated": "2022-07-06T00:10:58.2295323+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "8.4.0",
+            "Name": "fd",
+            "Info": "",
+            "Updated": "2022-06-10T18:07:58.6715638+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "5.0.1",
+            "Name": "ffmpeg",
+            "Info": "",
+            "Updated": "2022-04-13T13:07:39.5712817+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.0.347",
+            "Name": "flyctl",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:04.3656929+09:00",
+            "Source": "extras"
+        },
+        {
+            "Version": "0.30.0",
+            "Name": "fzf",
+            "Info": "",
+            "Updated": "2022-04-13T12:03:56.0958435+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "11.2.0",
+            "Name": "gcc",
+            "Info": "",
+            "Updated": "2022-01-12T17:21:02.5857224+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.13.0",
+            "Name": "gh",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:08.1752111+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.37.0.windows.1",
+            "Name": "git",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:25.538509+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.18.0",
+            "Name": "gleam",
+            "Info": "",
+            "Updated": "2021-12-13T15:17:22.3424+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.4.0",
+            "Name": "htmlq",
+            "Info": "",
+            "Updated": "2022-02-10T06:23:00.865015+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.50",
+            "Name": "innounp",
+            "Info": "",
+            "Updated": "2022-01-28T20:28:44.585338+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.6",
+            "Name": "jq",
+            "Info": "",
+            "Updated": "2022-05-20T17:14:29.4798956+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.2.0",
+            "Name": "just",
+            "Info": "",
+            "Updated": "2022-06-05T21:48:40.5576859+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.24.2",
+            "Name": "kubectl",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:28.9809991+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "8.12.1",
+            "Name": "libvips",
+            "Info": "",
+            "Updated": "2021-12-07T13:57:04.0387702+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.22.0",
+            "Name": "lsd",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:29.9070326+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "22.06",
+            "Name": "mediainfo",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:30.5652108+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.7.2",
+            "Name": "neovim",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:36.7339677+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "3.0.6",
+            "Name": "ngrok",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:40.2106747+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.6.6",
+            "Name": "nim",
+            "Info": "",
+            "Updated": "2022-05-19T07:00:41.0930735+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "7.92",
+            "Name": "nmap",
+            "Info": "",
+            "Updated": "2022-01-07T05:36:11.0203752+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.64.0",
+            "Name": "nu",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:42.549263+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.18",
+            "Name": "pandoc",
+            "Info": "",
+            "Updated": "2022-07-05T23:59:02.1535251+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2.02",
+            "Name": "pdftk",
+            "Info": "",
+            "Updated": "2022-01-28T20:28:48.1784885+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "13.0.0",
+            "Name": "ripgrep",
+            "Info": "",
+            "Updated": "2021-11-17T16:00:32.1055075+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.2020.01.26",
+            "Name": "sudo",
+            "Info": "",
+            "Updated": "2022-02-14T18:48:20.4436382+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.2.4",
+            "Name": "terraform",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:43.3806895+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.38.1",
+            "Name": "tflint",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:47.3420692+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "0.30.4",
+            "Name": "tilt",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:49.8672116+09:00",
+            "Source": "tilt-dev"
+        },
+        {
+            "Version": "9.0.1",
+            "Name": "topgrade",
+            "Info": "",
+            "Updated": "2022-06-10T17:57:12.8738068+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "6.00",
+            "Name": "unzip",
+            "Info": "",
+            "Updated": "2021-11-21T11:13:06.5792031+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "1.19.12",
+            "Name": "wrangler",
+            "Info": "",
+            "Updated": "2022-05-04T19:54:50.4687255+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2021.12.17",
+            "Name": "youtube-dl",
+            "Info": "",
+            "Updated": "2022-06-05T03:53:28.9077179+09:00",
+            "Source": "main"
+        },
+        {
+            "Version": "2022.06.29",
+            "Name": "yt-dlp",
+            "Info": "",
+            "Updated": "2022-07-06T00:11:55.482727+09:00",
+            "Source": "main"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2022-07-13T01:30:56+09:00",
+            "Manifests": 1601
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2022-07-13T01:30:36+09:00",
+            "Manifests": 1057
+        },
+        {
+            "Name": "tilt-dev",
+            "Source": "https://github.com/tilt-dev/scoop-bucket",
+            "Updated": "2022-06-24T05:02:05+09:00",
+            "Manifests": 0
+        },
+        {
+            "Name": "twpayne",
+            "Source": "https://github.com/twpayne/scoop-bucket",
+            "Updated": "2022-06-24T02:56:22+09:00",
+            "Manifests": 0
+        }
+    ],
+    "config": {
+        "SCOOP_REPO": "https://github.com/lukesampson/scoop",
+        "SCOOP_BRANCH": "master"
+    }
+}
