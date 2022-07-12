@@ -118,5 +118,10 @@ if [[ -d "~/.volta" ]]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+# Brew Shellenv
+if (( $+commands[brew] )); then
+  eval "$(brew shellenv)"
+fi
+
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 [[ -v ZPROF ]] && zprof
