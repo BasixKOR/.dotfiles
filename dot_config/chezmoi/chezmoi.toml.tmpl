@@ -1,0 +1,5 @@
+{{- if lookPath "nvim" -}}
+[merge]
+    command = "nvim"
+    args = ["-d", {{`"{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"`}}]
+{{- end }}
