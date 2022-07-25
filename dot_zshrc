@@ -113,9 +113,13 @@ export BUN_INSTALL="~/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Volta
-if [[ -d "~/.volta" ]]; then
+if [[ -d "$HOME/.volta" ]]; then
   export VOLTA_HOME="$HOME/.volta"
   export PATH="$VOLTA_HOME/bin:$PATH"
+fi
+
+if [[ -d "$HOME/.dotnet/tools" ]]; then
+  export PATH="$HOME/.dotnet/tools:$PATH"
 fi
 
 # Brew Shellenv
@@ -123,5 +127,5 @@ if (( $+commands[brew] )); then
   eval "$(brew shellenv)"
 fi
 
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+[ -s $HOME/fig/fig.sh ] && source $HOME/.fig/fig.sh
 [[ -v ZPROF ]] && zprof
