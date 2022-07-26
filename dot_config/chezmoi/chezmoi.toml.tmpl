@@ -3,3 +3,10 @@
     command = "nvim"
     args = ["-d", {{`"{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"`}}]
 {{- end }}
+{{- if lookPath "pinentry-touchid" -}}
+[pinentry]
+    command = "pinentry-touchid"
+{{- else if lookPath "pinentry-mac" -}}
+[pinentry]
+    command = "pinentry-mac"
+{{- end }}
