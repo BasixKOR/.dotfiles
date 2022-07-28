@@ -2,6 +2,6 @@ Host *
     IgnoreUnknown SecurityKeyProvider
 {{- if eq .chezmoi.os "windows" }}
     SecurityKeyProvider winhello.dll
-{- else }}
+{{- else }}
     IdentityAgent ~/.1password/agent.sock
 {{- end }}
