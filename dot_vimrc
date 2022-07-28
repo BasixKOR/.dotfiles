@@ -259,6 +259,7 @@ try
   Plug 'chrisbra/matchit'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/gv.vim'
+  Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
   call plug#end()
 
