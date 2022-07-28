@@ -223,7 +223,12 @@ try
     Plug 'junegunn/fzf'
   endif
   Plug 'ryanoasis/vim-devicons'
+  Plug 'lambdalisue/nerdfont.vim'
   Plug 'lambdalisue/fern.vim'
+  Plug 'LumaKernel/fern-mapping-fzf.vim'
+  Plug 'yuki-yano/fern-preview.vim'
+  Plug 'lambdalisue/fern-mapping-mark-children.vim'
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'
   Plug 'tpope/vim-fugitive'
 
   " Neovim only
@@ -333,25 +338,50 @@ try
     endfunction
   endif
 
-  " nerdtree
-  noremap <silent> <C-n> :NERDTreeToggle<CR>
-  function! s:nerdtree_startup()
-    if exists('s:std_in') || argc() != 1 || !isdirectory(argv()[0])
-      return
-    endif
-    execute 'NERDTree' argv()[0]
-    wincmd p
-    enew
-    execute 'cd '.argv()[0]
-    NERDTreeFocus
-  endfunction
-  augroup vimrc_nerdtree
-    autocmd!
+  " Fern
+  nnoremap <silent> <C-t> :<C-u>Fern <C-r>=<SID>smart_path()<CR><CR>
+  function! s:fern_settings() abort
+    nmap <buffer><expr>
+      \ <Plug>(fern-my-open-expand-collapse)
+      \ fern#smart#leaf(
+      \   "\<Plug>(fern-action-open:select)",
+      \   "\<Plug>(fern-action-expand)",
+      \   "\<Plug>(fern-action-collapse)",
+      \ )
+    nmap <buffer> <CR> <Plug>(fern-my-open-expand-collapse)
+    nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
+    nmap <buffer> n <Plug>(fern-action-new-path)
+    nmap <buffer> d <Plug>(fern-action-remove)
+    nmap <buffer> m <Plug>(fern-action-move)
+    nmap <buffer> M <Plug>(fern-action-rename)
+    nmap <buffer> h <Plug>(fern-action-hidden-toggle)
+    nmap <buffer> r <Plug>(fern-action-reload)
+    nmap <buffer> k <Plug>(fern-action-mark)
+    nmap <buffer> K <Plug>(fern-action-mark-children:leaf)
+    nmap <buffer> b <Plug>(fern-action-open:split)
+    nmap <buffer> v <Plug>(fern-action-open:vsplit)
+    nmap <buffer><nowait> < <Plug>(fern-action-leave)
+    nmap <buffer><nowait> > <Plug>(fern-action-enter)
 
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * call s:nerdtree_startup()
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+    nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+    nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+    nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  endfunction
+
+  augroup fern-settings
+    autocmd!
+    autocmd FileType fern call s:fern_settings()
   augroup END
+
+  function! s:smart_path() abort
+    " Return a parent directory of the current buffer when the buffer is a file.
+    " Otherwise it returns a current working directory.
+    if !empty(&buftype) || bufname('%') =~# '^[^:]\+://'
+      return fnamemodify('.', ':p')
+    endif
+    return fnamemodify(expand('%'), ':p:h')
+  endfunction
 
   " vim-indent-guides
   nmap <leader>i <Plug>IndentGuidesToggle
