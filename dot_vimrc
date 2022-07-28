@@ -181,6 +181,12 @@ endfunction
 nnoremap <F9> :call <SID>DragSelectMode()<CR>
 
 
+" Nasty hacks for Windows
+if has('win32')
+  " https://github.com/junegunn/vim-plug/issues/852#issuecomment-696431055
+  set shell=cmd.exe
+endif
+
 "
 " List of plugins
 "
