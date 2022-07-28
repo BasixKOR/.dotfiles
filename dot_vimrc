@@ -204,6 +204,7 @@ try
     Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-stylelint', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
     Plug 'neoclide/coc-sources', {'do': 'yarn install --frozen-lockfile', 'rtp': 'packages/emoji'}
     if executable('clangd')
       Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
@@ -218,8 +219,11 @@ try
   Plug 'ryanoasis/vim-devicons'
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-fugitive'
+
+  " Neovim only
   if has('nvim-0.6')
     Plug 'github/copilot.vim'
+    Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
   endif
 
   " Visual
@@ -227,6 +231,7 @@ try
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'phanviet/vim-monokai-pro'
+  Plug 'machakann/vim-highlightedyank'
 
   " Syntax
   let g:polyglot_disabled = ['v'] | Plug 'sheerun/vim-polyglot'
@@ -251,6 +256,7 @@ try
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
   Plug 'vim-scripts/ReplaceWithRegister'
+  Plug 'chrisbra/matchit'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/gv.vim'
 
