@@ -223,13 +223,14 @@ try
     Plug 'junegunn/fzf'
   endif
   Plug 'ryanoasis/vim-devicons'
-  Plug 'preservim/nerdtree'
+  Plug 'lambdalisue/fern.vim'
   Plug 'tpope/vim-fugitive'
 
   " Neovim only
   if has('nvim-0.6')
     Plug 'github/copilot.vim'
     Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+    Plug 'antoinemadec/FixCursorHold.nvim'
   endif
 
   " Visual
