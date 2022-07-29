@@ -28,6 +28,12 @@ bindkey -v
 
 source ~/.zinit/zinit.zsh
 
+# Brew Shellenv
+if (( $+commands[brew] )); then
+  eval "$(brew shellenv)"
+  fpath+="/opt/homebrew/share/zsh/site-functions"
+fi
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 
@@ -121,11 +127,6 @@ fi
 
 if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
-fi
-
-# Brew Shellenv
-if (( $+commands[brew] )); then
-  eval "$(brew shellenv)"
 fi
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
