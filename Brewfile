@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/cask-fonts"
 tap "microsoft/git"
@@ -52,6 +53,9 @@ cask "keka"
 cask "visual-studio-code"
 cask "iterm2"
 cask "discord"
+cask "bartender"
+cask "firefox-nightly"
+cask "cron"
 
 mas "BBEdit", id: 404009241
 mas "Calcbot", id: 931657367
