@@ -11,7 +11,7 @@ fi
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 
 if [[ -d "~/.zinit/zmodules/Src" ]]; then
-  module_path+=( "/c/Users/basix/.zinit/zmodules/Src" )
+  module_path+=( "$HOME/.zinit/zmodules/Src" )
   zmodload zdharma/zplugin
 fi
 
