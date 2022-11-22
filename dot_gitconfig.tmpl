@@ -45,5 +45,5 @@
 [delta]
     navigate = true  # use n and N to move between diff sections
 	theme = Monokai Extended
-[include]
-	path = ~/.gitconfig-local
+[includeIf "gitdir:~/work/"]
+	path = ~/.gitconfig-work
