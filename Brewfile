@@ -43,6 +43,8 @@ brew "wader/tap/fq"
 
 cask "1password"
 cask "1password-cli"
+cask "alfred"
+cask "arc"
 cask "bartender"
 cask "cron"
 cask "discord"
