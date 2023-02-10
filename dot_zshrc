@@ -110,6 +110,11 @@ if (( $+commands[direnv] )); then
   eval "$(direnv hook zsh)"
 fi
 
+# sccache integration
+if (( $+commands[sccache] )); then
+  export RUSTC_WRAPPER="$(which sccache)"
+fi
+
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
