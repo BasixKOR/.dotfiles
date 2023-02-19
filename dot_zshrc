@@ -30,6 +30,7 @@ source ~/.zinit/zinit.zsh
 
 # Brew Shellenv
 if (( $+commands[brew] )); then
+  export HOMEBREW_NO_GOOGLE_ANALYTICS=false
   eval "$(brew shellenv)"
   fpath+="/opt/homebrew/share/zsh/site-functions"
 fi
