@@ -1,8 +1,7 @@
+tap "1password/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "microsoft/git"
 tap "neodgm/neodgm"
 tap "wader/tap"
@@ -10,7 +9,6 @@ tap "wader/tap"
 brew "age"
 brew "bat"
 brew "python@3.10"
-brew "cargo-edit"
 brew "chezmoi"
 brew "croc"
 brew "deno"
@@ -31,7 +29,8 @@ brew "jq"
 brew "lsd"
 brew "mas"
 brew "mercurial"
-brew "neovim-delta"
+brew "nu"
+brew "openssh"
 brew "python@3.10"
 brew "pam-u2f"
 brew "ripgrep"
@@ -42,7 +41,7 @@ brew "volta"
 brew "wader/tap/fq"
 
 cask "1password"
-cask "alfred"
+cask "1password-cli"
 cask "bartender"
 cask "cron"
 cask "discord"
@@ -58,14 +57,22 @@ cask "iina"
 cask "iterm2"
 cask "keka"
 cask "notion"
+cask "raycast"
 cask "spotify"
 cask "visual-studio-code"
+cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
 mas "BBEdit", id: 404009241
 mas "Calcbot", id: 931657367
 mas "Craft", id: 1487937127
 mas "Darkroom", id: 953286746
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "Okta Verify", id: 490179405
 mas "Pastebot", id: 1179623856
 mas "Pocket", id: 568494494
 mas "Reeder", id: 1529448980
