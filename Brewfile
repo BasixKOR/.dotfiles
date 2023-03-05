@@ -10,6 +10,7 @@ brew "age"
 brew "bat"
 brew "python@3.10"
 brew "chezmoi"
+brew "clipboard"
 brew "croc"
 brew "deno"
 brew "elixir"
@@ -63,6 +64,9 @@ cask "visual-studio-code"
 cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
+mas "Affinity Designer 2", id: 1616831348
+mas "Affinity Photo 2", id: 1616822987
+mas "Affinity Publisher 2", id: 1606941598
 mas "BBEdit", id: 404009241
 mas "Calcbot", id: 931657367
 mas "Craft", id: 1487937127
