@@ -135,5 +135,9 @@ if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
 fi
 
+if (( $+commands[rtx] )); then
+  eval "$(rtx activate zsh)"
+fi
+
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 [[ -v ZPROF ]] && zprof
