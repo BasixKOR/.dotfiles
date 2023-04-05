@@ -1,3 +1,7 @@
+{{ if stat (joinPath .chezmoi.homeDir ".colima") -}}
+Include /Users/sung/.colima/ssh_config
+{{- end }}
+
 Host *
     IgnoreUnknown SecurityKeyProvider
 {{- if eq .chezmoi.os "windows" }}
