@@ -95,9 +95,7 @@ else
 fi
 alias mv='mv -i'
 alias cp='cp -i'
-if (( $+commands[yarn] )); then
-  alias y='yarn'
-fi
+alias y='yarn'
 
 
 # Chezmoi completions
@@ -136,7 +134,11 @@ if [[ -d "$HOME/.dotnet/tools" ]]; then
 fi
 
 if (( $+commands[rtx] )); then
-  eval "$(rtx activate zsh)"
+  if [[ -v RTX_SHIM ]]; then
+    export PATH="$HOME/.local/share/rtx/shims:$PATH"
+  else
+    eval "$(rtx activate zsh)"
+  fi
 fi
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
