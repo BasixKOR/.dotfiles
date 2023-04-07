@@ -129,6 +129,10 @@ if [[ -d "$HOME/.volta" ]]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
+if [[ -d "$HOME/.cargo"]]; then
+  source "$HOME/.cargo/env"
+fi
+
 if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
 fi
