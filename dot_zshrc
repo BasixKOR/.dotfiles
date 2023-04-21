@@ -78,6 +78,8 @@ bindkey  "^[[1;5D" backward-word     # Ctrl + <-
 # Set EDITOR
 if [[ "$TERM_PROGRAM" = "vscode" ]]; then
   export EDITOR="code --wait"
+elif [[ -n "$ZED" ]]; then
+  export EDITOR="zed -w"
 elif (( $+commands[nvim] )); then
   export EDITOR=nvim
 elif (( $+commands[vim] )); then

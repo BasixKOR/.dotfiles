@@ -43,7 +43,12 @@
     },
     "terminal": {
         "shell": {
-            "program": "zsh"
+            "with_arguments": {
+                "program": "zsh",
+                "args": [
+                    "--login"
+                ]
+            }
         },
         "env": {
             "ZED": "1"
