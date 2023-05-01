@@ -1,3 +1,11 @@
+[tools]
+node = '18'
+ruby = 'latest'
+python = { version='3.10', virtualenv='.venv' }
+gleam = 'latest'
+elixir = '1.14'
+erlang = '25' # https://hexdocs.pm/elixir/1.14.4/compatibility-and-deprecations.html
+
 [settings]
 # whether to prompt to install plugins and runtimes if they're not already installed
 missing_runtime_behavior = 'prompt' # other options: 'ignore', 'warn', 'prompt', 'autoinstall'
@@ -19,8 +27,5 @@ asdf_compat = true # set to true to ensure .tool-versions will be compatible wit
 jobs = 4            # number of plugins or runtimes to install in parallel. The default is `4`.
 raw = false         # set to true to directly pipe plugins to stdin/stdout/stderr
 
-shorthands_file = '~/.config/rtx/shorthands.toml' # path to the shorthands file, see `RTX_SHORTHANDS_FILE`
+# shorthands_file = '~/.config/rtx/shorthands.toml' # path to the shorthands file, see `RTX_SHORTHANDS_FILE`
 disable_default_shorthands = false # disable the default shorthands, see `RTX_DISABLE_DEFAULT_SHORTHANDS`
-
-experimental = true # enable experimental features such as shims
-shims_dir = '~/.local/share/rtx/shims' # [experimental] directory where shims are stored
