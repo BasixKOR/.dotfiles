@@ -48,9 +48,9 @@ brew "mas"
 brew "mercurial"
 brew "neovim"
 brew "node"
+brew "nu"
 brew "openjdk@11"
 brew "openjdk@17"
-brew "nu"
 brew "openssh"
 brew "python@3.10"
 brew "pam-u2f"
@@ -73,6 +73,7 @@ brew "wader/tap/fq"
 
 cask "1password"
 cask "1password-cli"
+cask "appcleaner"
 cask "arc"
 cask "bartender"
 cask "cron"
@@ -92,6 +93,7 @@ cask "keka"
 cask "little-snitch"
 cask "notion"
 cask "obsidian"
+cask "orbstack"
 cask "proxyman"
 cask "raycast"
 cask "reveal"
@@ -100,6 +102,7 @@ cask "shottr"
 cask "sloth"
 cask "spotify"
 cask "visual-studio-code"
+cask "xcodes"
 cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
@@ -117,11 +120,14 @@ mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "Okta Verify", id: 490179405
 mas "Pastebot", id: 1179623856
+mas "Pixelmator Pro", id: 1289583905
 mas "Pocket", id: 568494494
 mas "Reeder", id: 1529448980
 mas "Slack", id: 803453959
+mas "Sleeve", id: 1606145041
 mas "Tailscale", id: 1475387142
 mas "Telegram", id: 747648890
+mas "TestFlight", id: 899247664
 mas "Tweetbot", id: 1384080005
 mas "Xcode", id: 497799835
 mas "Velja", id: 1607635845
