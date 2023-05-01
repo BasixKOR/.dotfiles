@@ -5,6 +5,7 @@ python = { version='3.10', virtualenv='.venv' }
 gleam = 'latest'
 elixir = '1.14'
 erlang = '25' # https://hexdocs.pm/elixir/1.14.4/compatibility-and-deprecations.html
+terraform = "latest"
 
 [settings]
 # whether to prompt to install plugins and runtimes if they're not already installed
