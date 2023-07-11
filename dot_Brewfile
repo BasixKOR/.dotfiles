@@ -2,11 +2,17 @@ tap "1password/tap"
 tap "agrinman/tap"
 tap "benbjohnson/litestream"
 tap "cloudflare/cloudflare"
+tap "facebook/fb"
+tap "getsentry/tools"
+tap "googlechrome/simplehttp2server", "https://github.com/GoogleChrome/simplehttp2server"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
+tap "jkfran/killport"
 tap "microsoft/git"
 tap "neodgm/neodgm"
+tap "simnalamburt/x" # uniqs
+tap "tidwall/jj"
 tap "wader/tap"
 
 brew "age"
@@ -21,6 +27,7 @@ brew "gnutls"
 brew "lima"
 brew "colima"
 brew "croc"
+brew "curl"
 brew "deno"
 brew "docker"
 brew "docker-buildx"
@@ -57,21 +64,30 @@ brew "pam-u2f"
 brew "patchutils"
 brew "qrencode"
 brew "ripgrep"
+brew "ripgrep-all"
 brew "rtx"
 brew "rustup-init"
 brew "sccache"
 brew "sha3sum"
+brew "terragrunt"
 brew "tokei"
 brew "topgrade"
 brew "vips"
+brew "watchman"
 brew "yj"
 brew "yq"
 brew "agrinman/tap/tunnelto"
 brew "benbjohnson/litestream/litestream"
 brew "cloudflare/cloudflare/cloudflared"
+brew "facebook/fb/idb-companion"
+brew "getsentry/tools/sentry-cli"
+brew "googlechrome/simplehttp2server/simplehttp2server"
+brew "jkfran/killport/killport"
+brew "simnalamburt/x/uniqs"
+brew "tidwall/jj/jj"
 brew "wader/tap/fq"
 
-cask "1password"
+cask "1password-beta"
 cask "1password-cli"
 cask "appcleaner"
 cask "arc"
@@ -88,9 +104,13 @@ cask "fork"
 cask "git-credential-manager-core"
 cask "handbrake"
 cask "iina"
+cask "imageoptim"
 cask "iterm2"
 cask "keka"
 cask "little-snitch"
+cask "middle"
+cask "minisim"
+cask "mouse-fix"
 cask "notion"
 cask "obsidian"
 cask "orbstack"
@@ -101,6 +121,7 @@ cask "safari-technology-preview"
 cask "shottr"
 cask "sloth"
 cask "spotify"
+cask "sunsama"
 cask "visual-studio-code"
 cask "xcodes"
 cask "zoom"
@@ -109,10 +130,14 @@ mas "1Password for Safari", id: 1569813296
 mas "Affinity Designer 2", id: 1616831348
 mas "Affinity Photo 2", id: 1616822987
 mas "Affinity Publisher 2", id: 1606941598
+mas "Amphetamine", id: 937984704
 mas "BBEdit", id: 404009241
 mas "Calcbot", id: 931657367
 mas "Craft", id: 1487937127
 mas "Darkroom", id: 953286746
+mas "Dato", id: 1470584107
+mas "Dropover", id: 1355679052
+mas "Infuse", id: 1136220934
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
@@ -123,8 +148,11 @@ mas "Pastebot", id: 1179623856
 mas "Pixelmator Pro", id: 1289583905
 mas "Pocket", id: 568494494
 mas "Reeder", id: 1529448980
+mas "S3", id: 6447647340
+mas "Shazzam", id: 897118787
 mas "Slack", id: 803453959
 mas "Sleeve", id: 1606145041
+mas "SQLPro Studio", id: 985614903
 mas "Tailscale", id: 1475387142
 mas "Telegram", id: 747648890
 mas "Xcode", id: 497799835
