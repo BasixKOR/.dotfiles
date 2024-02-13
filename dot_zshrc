@@ -139,11 +139,11 @@ if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
 fi
 
-if (( $+commands[rtx] )); then
+if (( $+commands[mise] )); then
   if [[ -v RTX_SHIM ]]; then
-    export PATH="$HOME/.local/share/rtx/shims:$PATH"
+    export PATH="$HOME/.local/share/mise/shims:$PATH"
   else
-    eval "$(rtx activate zsh)"
+    eval "$(mise activate zsh)"
   fi
 fi
 
