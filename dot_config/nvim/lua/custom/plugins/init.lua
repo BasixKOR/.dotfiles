@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { 'lbrayner/vim-rzip', lazy = true },
+  { 'lbrayner/vim-rzip',      lazy = true },
   {
     'zbirenbaum/copilot.lua',
     lazy = true,
@@ -17,5 +17,6 @@ return {
     cmd = 'ToggleTerm',
     version = "*",
     config = true
-  }
+  },
+  { 'nvim-tree/nvim-tree.lua', config = true }
 }
