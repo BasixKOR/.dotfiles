@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { 'lbrayner/vim-rzip', lazy = true },
+  { 'lbrayner/vim-rzip',       lazy = true },
   {
     'zbirenbaum/copilot.lua',
     lazy = true,
@@ -21,4 +21,5 @@ return {
   { 'nvim-tree/nvim-tree.lua', config = true },
   require 'config.none-ls',
   { 'echasnovski/mini.nvim', version = '*' },
+  { 'soulis-1256/eagle.nvim' }
 }
