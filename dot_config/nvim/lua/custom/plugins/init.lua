@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  { 'lbrayner/vim-rzip',      lazy = true },
+  { 'lbrayner/vim-rzip', lazy = true },
   {
     'zbirenbaum/copilot.lua',
     lazy = true,
