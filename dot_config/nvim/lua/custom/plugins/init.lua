@@ -19,5 +19,6 @@ return {
     config = true
   },
   { 'nvim-tree/nvim-tree.lua', config = true },
-  require 'config.none-ls'
+  require 'config.none-ls',
+  { 'echasnovski/mini.nvim', version = '*' },
 }
