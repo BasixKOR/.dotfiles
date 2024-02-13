@@ -1,3 +1,10 @@
+-- [[ Setting options ]]
+-- See `:help vim.o`
+-- NOTE: You can change these options as you wish!
+
+-- Set highlight on search
+-- vim.o.hlsearch = false
+
 -- Original: https://github.com/suhdonghwi/dotfiles/blob/76caf8d5ff0401a1c5d1bb1225509732346e4461/private_dot_config/nvim/lua/options.lua
 
 vim.cmd("language en_US.UTF-8")
@@ -29,6 +36,11 @@ vim.cmd("filetype plugin indent on")
 -- Hybrid line number
 o.number = true
 o.relativenumber = true
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.o.clipboard = 'unnamedplus'
 
 -- Indent wrapped lines to match line start
 o.breakindent = true
@@ -119,6 +131,12 @@ end
 
 -- Format on save
 -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format({async = true})]])
+vim.api.nvim_create_autocmd('BufWritePre', {
+	callback = function()
+    vim.lsp.buf.format({ async = true })
+	end,
+	pattern = '*',
+})
 
 -- Change cwd based on opening file path
 vim.cmd([[
@@ -129,5 +147,5 @@ augroup END
 ]])
 
 -- Set gui font (for Neovide)
-vim.cmd([[set guifont=Iosevka\ Nerd\ Font:h14]])
+vim.cmd([[set guifont=CaskaydiaCove\ Nerd\ Font:h14]])
 vim.g.neovide_scroll_animation_length = 1.0
