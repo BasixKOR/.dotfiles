@@ -18,5 +18,6 @@ return {
     version = "*",
     config = true
   },
-  { 'nvim-tree/nvim-tree.lua', config = true }
+  { 'nvim-tree/nvim-tree.lua', config = true },
+  require 'config.none-ls'
 }
