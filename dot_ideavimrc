@@ -3,3 +3,4 @@ set ideajoin
 set clipboard=ideaput
 set ideamarks
 set multiple-cursors
+set ReplaceWithRegister
