@@ -1,6 +1,10 @@
-{{ if stat (joinPath .chezmoi.homeDir ".colima") -}}
-Include /Users/sung/.colima/ssh_config
+{{ if stat (joinPath .chezmoi.homeDir ".orbstack") -}}
+Include ~/.orbstack/ssh/config
 {{- end }}
+{{ if stat (joinPath .chezmoi.homeDir ".colima") -}}
+Include ~/.colima/ssh_config
+{{- end }}
+Include ~/.ssh/config.d/*
 
 Host *
     IgnoreUnknown SecurityKeyProvider
