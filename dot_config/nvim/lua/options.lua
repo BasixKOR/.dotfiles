@@ -130,13 +130,12 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Format on save
--- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format({async = true})]])
-vim.api.nvim_create_autocmd('BufWritePre', {
-	callback = function()
-    vim.lsp.buf.format({ async = true })
-	end,
-	pattern = '*',
-})
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+-- 	callback = function()
+--     vim.lsp.buf.format({ async = true })
+-- 	end,
+-- 	pattern = '*',
+-- })
 
 -- Change cwd based on opening file path
 vim.cmd([[
@@ -149,3 +148,4 @@ augroup END
 -- Set gui font (for Neovide)
 vim.cmd([[set guifont=CaskaydiaCove\ Nerd\ Font:h14]])
 vim.g.neovide_scroll_animation_length = 1.0
+
