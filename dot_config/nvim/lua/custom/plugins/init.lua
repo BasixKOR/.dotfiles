@@ -9,8 +9,13 @@ return {
     lazy = true,
     cmd = 'Copilot',
     event = 'InsertEnter',
-    config = function()
-      require('copilot').setup()
-    end,
+    config = true
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    lazy = true,
+    cmd = 'ToggleTerm',
+    version = "*",
+    config = true
   }
 }
