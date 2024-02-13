@@ -88,43 +88,17 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
     },
   },
 
-  {
-    -- Autocompletion
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
-      {
-        'L3MON4D3/LuaSnip',
-        build = (function()
-          -- Build Step is needed for regex support in snippets
-          -- This step is not supported in many windows environments
-          -- Remove the below condition to re-enable on windows
-          if vim.fn.has 'win32' == 1 then
-            return
-          end
-          return 'make install_jsregexp'
-        end)(),
-      },
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
-
-      -- Adds a number of user-friendly snippets
-      'rafamadriz/friendly-snippets',
-    },
-  },
+  require('config.cmp'),
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -249,7 +223,8 @@ require('lazy').setup({
         'nvim-telescope/telescope-fzf-native.nvim',
         -- NOTE: If you are having trouble with this installation,
         --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+        build =
+        'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
         cond = function()
           return vim.fn.executable 'cmake' == 1
         end,
@@ -272,9 +247,9 @@ require('lazy').setup({
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
     config = function()
-        require("nvim-surround").setup({
-          -- https://github.com/kylechui/nvim-surround/blob/main/lua/nvim-surround/config.lua
-        })
+      require("nvim-surround").setup({
+        -- https://github.com/kylechui/nvim-surround/blob/main/lua/nvim-surround/config.lua
+      })
     end
   },
 
@@ -595,58 +570,6 @@ mason_lspconfig.setup_handlers {
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
-}
-
--- [[ Configure nvim-cmp ]]
--- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-require('luasnip.loaders.from_vscode').lazy_load()
-luasnip.config.setup {}
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  completion = {
-    completeopt = 'menu,menuone,noinsert',
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_locally_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.locally_jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
-  },
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
