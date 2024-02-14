@@ -2,6 +2,9 @@ return {
 	'akinsho/toggleterm.nvim',
 	lazy = true,
 	cmd = 'ToggleTerm',
-	version = "*",
-	config = true
+	keys = {
+		{ '[C-`', '<cmd>ToggleTerm<cr>', desc = 'Toggle Terminal' },
+	},
+	version = '*',
+	config = true,
 }
