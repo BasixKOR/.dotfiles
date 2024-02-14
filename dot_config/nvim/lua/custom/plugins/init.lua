@@ -11,5 +11,11 @@ return {
   { 'nvim-tree/nvim-tree.lua', config = true },
   require 'config.none-ls',
   { 'echasnovski/mini.nvim',   version = '*' },
-  { 'soulis-1256/eagle.nvim' }
+  { 'soulis-1256/eagle.nvim' },
+  {
+    -- For some reason the last release is in 2019, change this to use version when releases.
+    'undotree/doc',
+    lazy = true,
+    cmd = 'UndotreeToggle',
+  }
 }
