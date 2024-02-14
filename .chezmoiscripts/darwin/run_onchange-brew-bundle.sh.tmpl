@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+
 if command -v brew; then
 	brew bundle --global -q
 else
