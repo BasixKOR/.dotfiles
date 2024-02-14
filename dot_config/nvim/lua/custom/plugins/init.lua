@@ -11,5 +11,6 @@ return {
     'mbbill/undotree',
     lazy = true,
     cmd = 'UndotreeToggle',
-  }
+  },
+  { 'mg979/vim-visual-multi' }
 }
