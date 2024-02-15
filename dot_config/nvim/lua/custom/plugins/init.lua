@@ -12,5 +12,10 @@ return {
     lazy = true,
     cmd = 'UndotreeToggle',
   },
-  { 'mg979/vim-visual-multi' }
+  { 'mg979/vim-visual-multi' },
+  {
+    'simnalamburt/vim-tiny-ime',
+    cond = vim.fn.has('macunix'),
+    build = './build'
+  }
 }
