@@ -17,5 +17,12 @@ return {
     'simnalamburt/vim-tiny-ime',
     cond = vim.fn.has('macunix'),
     build = './build'
+  },
+  { 'bkad/CamelCaseMotion', event = 'VeryLazy' },
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    -- dependencies = { "nvim-tree/nvim-web-devicons" },
   }
 }
