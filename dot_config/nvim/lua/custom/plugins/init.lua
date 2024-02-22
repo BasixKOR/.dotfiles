@@ -18,11 +18,22 @@ return {
     cond = vim.fn.has('macunix'),
     build = './build'
   },
-  { 'bkad/CamelCaseMotion', event = 'VeryLazy' },
+  {
+    'bkad/CamelCaseMotion',
+    event = 'VeryLazy',
+    config = function ()
+      vim.g.camelcasemotion_key = '\\'
+    end
+  },
   {
     'stevearc/oil.nvim',
     opts = {},
     -- Optional dependencies
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   }
 }

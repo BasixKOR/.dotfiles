@@ -383,7 +383,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   rust_analyzer = {},
-  tsserver = {},
+  -- tsserver = {}, -- replaced with typescript-tools
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   eslint = {},
   bashls = {},
