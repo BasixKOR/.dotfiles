@@ -2,7 +2,6 @@ return {
   { 'lbrayner/vim-rzip',      lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
   require 'config.toggleterm',
-  { 'nvim-tree/nvim-tree.lua', config = true },
   require 'config.none-ls',
   { 'echasnovski/mini.nvim',   version = '*' },
   { 'soulis-1256/eagle.nvim',  config = true },
