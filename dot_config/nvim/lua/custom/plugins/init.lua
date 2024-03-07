@@ -59,4 +59,16 @@ return {
       }
     end,
   },
+  {
+    'rmagatti/auto-session',
+    opts = {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/", "~/work", "~/Downloads", "/", "/tmp"}
+    },
+  },
+  {
+    'm4xshen/hardtime.nvim',
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
 }
