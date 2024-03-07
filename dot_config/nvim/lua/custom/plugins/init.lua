@@ -3,7 +3,7 @@ return {
   { 'zbirenbaum/copilot.lua', config = true },
   require 'config.toggleterm',
   require 'config.none-ls',
-  { 'echasnovski/mini.nvim',   version = '*' },
+  require 'config.mini',
   { 'soulis-1256/eagle.nvim',  config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.
@@ -27,9 +27,9 @@ return {
   {
     'stevearc/oil.nvim',
     opts = {},
-    config = function ()
-      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-    end
+    keys = {
+      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" }
+    }
     -- Optional dependencies
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
   },
