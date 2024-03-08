@@ -149,3 +149,4 @@ fi
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 [[ -v ZPROF ]] && zprof
+# vim: ft=zsh
