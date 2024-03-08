@@ -44,6 +44,7 @@ return {
   },
   {
     'dmmulroy/tsc.nvim',
+    event = 'VeryLazy',
     dependencies = { 'rcarriga/nvim-notify' },
     config = function()
       local lspconfig = require 'lspconfig'
