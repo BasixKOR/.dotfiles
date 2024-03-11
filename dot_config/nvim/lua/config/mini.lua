@@ -16,8 +16,6 @@ return {
 			},
 		}
 
-		require('mini.surround').setup()
-
 		require('mini.animate').setup {
 			cursor = { enable = false },
 			resize = { enable = false },
