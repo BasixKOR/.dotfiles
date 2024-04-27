@@ -141,3 +141,7 @@ null_ls.setup {
     null_ls.builtins.formatting.stylua,
   },
 }
+
+require("typescript-tools").setup {
+  on_attach = on_attach,
+}

@@ -1,11 +1,13 @@
 [tools]
-node = '18'
-ruby = 'latest'
+node = '20'
 python = '3.10'
 gleam = 'latest'
 elixir = '1.14'
 erlang = '25' # https://hexdocs.pm/elixir/1.14.4/compatibility-and-deprecations.html
 terraform = "latest"
+deno = "latest"
+"npm:prettier" = "latest"
+kubectl = "latest"
 
 [settings]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
@@ -30,3 +32,6 @@ disable_default_shorthands = false # disable the default shorthands, see `RTX_DI
 
 # Tasks and other experimentals
 experimental = true
+
+# python-build
+python_compile = true
