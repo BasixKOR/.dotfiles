@@ -108,7 +108,9 @@ local servers = {
       ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] =
       "*flow*.{yml,yaml}",
     }, -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw/
-  }
+  },
+
+  terraformls = {}
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
