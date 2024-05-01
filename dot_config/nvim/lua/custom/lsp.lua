@@ -107,6 +107,7 @@ local servers = {
       "*docker-compose*.{yml,yaml}",
       ["https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json"] =
       "*flow*.{yml,yaml}",
+      ["https://taskfile.dev/schema.json"] = "Taskfile.yml"
     }, -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw/
   },
 
