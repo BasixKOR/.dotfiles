@@ -1,3 +1,7 @@
+require "base64"
+
+cork = Base64.decode64("ZW5pZ21hdGljZGIvc3VwZXItc2VjcmV0LXRhcA")
+
 tap "1password/tap"
 tap "agrinman/tap"
 tap "axodotdev/tap"
@@ -7,14 +11,13 @@ tap "fsouza/prettierd"
 tap "getsentry/tools"
 tap "googlechrome/simplehttp2server", "https://github.com/GoogleChrome/simplehttp2server"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "jkfran/killport"
 tap "microsoft/git"
 tap "neodgm/neodgm"
 tap "simnalamburt/x" # uniqs
 tap "tidwall/jj"
 tap "wader/tap"
+tap cork
 
 brew "age"
 brew "ast-grep"
@@ -93,12 +96,13 @@ brew "simnalamburt/x/uniqs"
 brew "tidwall/jj/jj"
 brew "wader/tap/fq"
 
-cask "1password-beta"
+cask "1password"
 cask "1password-cli"
 cask "appcleaner"
 cask "arc"
 cask "bartender"
 cask "codeedit"
+cask "#{cork}/cork"
 cask "discord"
 cask "element"
 cask "firefox"
