@@ -155,6 +155,7 @@ require('lazy').setup({
           return vim.fn.executable 'cmake' == 1
         end,
       },
+      require 'config.telescope',
     },
   },
 
