@@ -28,6 +28,8 @@ return {
 				toggle = 'gs',
 			},
 		}
+
+		require('mini.operators').setup()
 	end,
 	dependencies = {
 		'JoosepAlviste/nvim-ts-context-commentstring'
