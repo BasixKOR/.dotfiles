@@ -4,6 +4,7 @@ return {
   require 'config.toggleterm',
   require 'config.none-ls',
   require 'config.mini',
+  require 'config.telescope',
   { 'soulis-1256/eagle.nvim', config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.
