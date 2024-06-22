@@ -50,9 +50,6 @@ end
 require('mason').setup()
 require('mason-lspconfig').setup()
 
--- Setup neovim lua configuration
-require('neodev').setup()
-
 local lspconfig = require 'lspconfig'
 local util = lspconfig.util
 
