@@ -1,5 +1,5 @@
 return {
-  { 'lbrayner/vim-rzip',      lazy = true },
+  { 'lbrayner/vim-rzip', lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
   require 'config.toggleterm',
   require 'config.none-ls',
@@ -43,13 +43,13 @@ return {
     opts = {},
   },
   {
-    "NeogitOrg/neogit",
+    'NeogitOrg/neogit',
     dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "sindrets/diffview.nvim", -- optional - Diff integration
-      "nvim-telescope/telescope.nvim", -- optional
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
+      'nvim-telescope/telescope.nvim', -- optional
     },
-    config = true
+    config = true,
   },
   {
     'dmmulroy/tsc.nvim',
@@ -95,4 +95,5 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
   },
+  { 'nvim-neorg/neorg', opts = {} },
 }
