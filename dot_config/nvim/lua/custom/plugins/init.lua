@@ -96,4 +96,5 @@ return {
     opts = {},
   },
   { 'nvim-neorg/neorg', opts = {} },
+  { 'akinsho/git-conflict.nvim', version = '*', config = true },
 }

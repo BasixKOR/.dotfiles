@@ -159,6 +159,7 @@ null_ls.setup {
       end,
     },
     null_ls.builtins.formatting.stylua,
+    null_ls.builtins.code_actions.gitsigns,
   },
 }
 
