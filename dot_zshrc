@@ -69,7 +69,7 @@ zmodload -i zsh/complist
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Zsh Fast Syntax Highlighting
-fast-theme XDG:catppuccin-mocha
+fast-theme XDG:catppuccin-macchiato
 
 # Fix keybindings
 bindkey  "^[[H"    beginning-of-line # Home

@@ -10,14 +10,14 @@
     url = "https://github.com/tmux-plugins/tpm"
     refreshPeriod = "168h"
 
-[".config/bat/themes/Catppuccin Mocha.tmTheme"]
+[".config/bat/themes/Catppuccin Macchiato.tmTheme"]
     type = "file"
-    url = "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+    url = "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Macchiato.tmTheme"
     refreshPeriod = "168h"
 
-[".config/fsh/catppuccin-mocha.ini"]
+[".config/fsh/catppuccin-macchiato.ini"]
     type = "file"
-    url = "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme"
+    url = "https://github.com/catppuccin/zsh-fsh/raw/main/themes/catppuccin-macchiato.ini"
     refreshPeriod = "168h"
 
 [".vim/autoload/plug.vim"]

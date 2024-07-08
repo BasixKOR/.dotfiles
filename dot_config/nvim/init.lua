@@ -113,7 +113,7 @@ require('lazy').setup({
     name = 'catppuccin',
     priority = 1000,
     opts = {
-      flavour = 'mocha',
+      flavour = 'macchiato',
     },
     setup = function()
       vim.cmd.colorscheme 'catppuccin'
