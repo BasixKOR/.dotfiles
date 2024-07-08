@@ -49,7 +49,7 @@ zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait; zinit light simnalamburt/cgitc
-zinit ice lucid wait pick"z.sh"; zinit light rupa/z
+zinit ice lucid pick"z.sh"; zinit light rupa/z
 if (( $+commands[fzf] )); then
   zinit ice lucid wait; zinit light joshskidmore/zsh-fzf-history-search
   zinit ice lucid wait pick"fz.sh"; zinit light changyuheng/fz
@@ -67,6 +67,9 @@ zmodload -i zsh/complist
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Zsh Fast Syntax Highlighting
+fast-theme XDG:catppuccin-mocha
 
 # Fix keybindings
 bindkey  "^[[H"    beginning-of-line # Home
