@@ -3,8 +3,8 @@
 # Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
 
 if command -v brew; then
-	brew bundle --global -q
+	brew bundle --global -q || true
 else
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	/bin/bash -c "brew bundle --global"
+	/bin/bash -c "brew bundle --global || true"
 fi
