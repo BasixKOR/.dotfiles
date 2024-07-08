@@ -93,9 +93,9 @@ require('lazy').setup({
       -- Additional lua configuration, makes nvim stuff amazing!
       {
         'folke/lazydev.nvim',
-        cond = vim.fn.has('nvim-0.10') == 1,
+        cond = vim.fn.has 'nvim-0.10' == 1,
         ft = 'lua',
-        opts = {}
+        opts = {},
       },
     },
   },
@@ -109,12 +109,14 @@ require('lazy').setup({
   require 'config.gitsigns',
 
   {
-    -- Monokai
-    'tanvirtin/monokai.nvim',
+    'catppuccin/nvim',
+    name = 'catppuccin',
     priority = 1000,
-    lazy = false,
-    config = function()
-      require('monokai').setup { palette = require('monokai').pro }
+    opts = {
+      flavour = 'macchiato',
+    },
+    setup = function()
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 
