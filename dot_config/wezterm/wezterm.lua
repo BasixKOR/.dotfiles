@@ -1,7 +1,7 @@
 wezterm = require 'wezterm'
 config = wezterm.config_builder()
 
-config.color_scheme = 'Monokai Remastered'
+config.color_scheme = 'Catppuccin Mocha'
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
 	require 'windows'
