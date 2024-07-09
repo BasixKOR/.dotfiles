@@ -45,20 +45,24 @@ compinit
 # Zinit plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
+if (( $+commands[atuin] )); then
+  zinit light atuinsh/atuin
+else
+  (( $+commands[fzf] )) && zinit ice lucid wait; zinit light joshskidmore/zsh-fzf-history-search
+  zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+fi
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit ice lucid wait; zinit light simnalamburt/cgitc
 zinit ice lucid pick"z.sh"; zinit light rupa/z
 if (( $+commands[fzf] )); then
-  zinit ice lucid wait; zinit light joshskidmore/zsh-fzf-history-search
   zinit ice lucid wait pick"fz.sh"; zinit light changyuheng/fz
   [ -s ~/.fig/fig.sh ] || zinit ice lucid wait; zinit light Aloxaf/fzf-tab
 fi
 
 # history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 bindkey '^H' backward-kill-word
 setopt complete_in_word
 setopt always_to_end
@@ -69,7 +73,7 @@ zmodload -i zsh/complist
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Zsh Fast Syntax Highlighting
-fast-theme XDG:catppuccin-macchiato
+fast-theme XDG:catppuccin-macchiato > /dev/null
 
 # Fix keybindings
 bindkey  "^[[H"    beginning-of-line # Home
