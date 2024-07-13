@@ -55,8 +55,8 @@ else
 fi
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light agkozak/zsh-z
 zinit ice lucid wait; zinit light simnalamburt/cgitc
+zinit ice lucid pick"z.sh"; zinit light rupa/z
 if (( $+commands[fzf] )); then
   zinit ice lucid wait pick"fz.sh"; zinit light changyuheng/fz
   [ -s ~/.fig/fig.sh ] || zinit ice lucid wait; zinit light Aloxaf/fzf-tab
