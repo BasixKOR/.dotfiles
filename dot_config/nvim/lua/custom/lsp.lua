@@ -88,6 +88,9 @@ local servers = {
   },
 
   yamlls = {
+    schemaStore = {
+      enable = true
+    },
     schemas = {
       kubernetes = '*.yaml',
       ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
@@ -104,6 +107,7 @@ local servers = {
       ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
       ['https://taskfile.dev/schema.json'] = 'Taskfile.yml',
       ['https://yarnpkg.com/configuration/yarnrc.json'] = '.yarnrc.yml',
+      ['https://json.schemastore.org/circleciconfig.json'] = '.circleci/config.yml',
     }, -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw/
   },
 
