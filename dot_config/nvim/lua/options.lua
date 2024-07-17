@@ -149,3 +149,9 @@ augroup END
 vim.cmd([[set guifont=CaskaydiaCove\ Nerd\ Font:h14]])
 vim.g.neovide_scroll_animation_length = 1.0
 
+-- set folding method
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+o.foldlevel = 9999
+o.foldlevelstart = 1
