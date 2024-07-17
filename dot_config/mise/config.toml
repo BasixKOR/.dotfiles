@@ -8,6 +8,7 @@ terraform = "latest"
 deno = "latest"
 "npm:prettier" = "latest"
 kubectl = "latest"
+usage = "0.3.0"
 
 [settings]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
