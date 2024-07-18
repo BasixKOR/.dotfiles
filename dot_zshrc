@@ -89,6 +89,7 @@ elif [[ -n "$ZED" ]]; then
   export EDITOR="zed -w"
 elif (( $+commands[nvim] )); then
   export EDITOR=nvim
+  alias ng="nvim -c Neogit"
 elif (( $+commands[vim] )); then
   export EDITOR=vim
 fi
