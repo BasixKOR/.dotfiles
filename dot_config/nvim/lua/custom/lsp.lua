@@ -89,7 +89,7 @@ local servers = {
 
   yamlls = {
     schemaStore = {
-      enable = true
+      enable = true,
     },
     schemas = {
       kubernetes = '*.yaml',
@@ -112,6 +112,14 @@ local servers = {
   },
 
   terraformls = {},
+  jsonls = {
+    settings = {
+      json = {
+        schemas = require('schemastore').json.schemas(),
+        validate = { enable = true },
+      },
+    },
+  },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
