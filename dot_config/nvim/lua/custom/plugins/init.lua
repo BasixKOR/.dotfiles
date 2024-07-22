@@ -11,7 +11,16 @@ return {
     lazy = true,
     cmd = 'UndotreeToggle',
   },
-  { 'mg979/vim-visual-multi' },
+  {
+    'mg979/vim-visual-multi',
+    init = function()
+      vim.g.VM_mouse_mappings = 1
+      vim.g.VM_maps = {
+        ['Select Cursor Down'] = '<M-C-Down>',
+        ['Select Cursor Up'] = '<M-C-Up>',
+      }
+    end,
+  },
   {
     'simnalamburt/vim-tiny-ime',
     cond = vim.fn.has 'macunix',
@@ -166,5 +175,5 @@ return {
       }
     end,
   },
-  "b0o/schemastore.nvim",
+  'b0o/schemastore.nvim',
 }
