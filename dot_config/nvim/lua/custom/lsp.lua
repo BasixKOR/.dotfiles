@@ -151,14 +151,14 @@ local command_resolver = require 'null-ls.helpers.command_resolver'
 null_ls.setup {
   debug = true,
   sources = {
-    null_ls.builtins.formatting.prettierd.with {
+    null_ls.builtins.formatting.prettier.with {
       dynamic_command = command_resolver.from_yarn_pnp(),
       condition = function()
         return not is_biome and is_yarn_pnp
       end,
     },
 
-    null_ls.builtins.formatting.prettierd.with {
+    null_ls.builtins.formatting.prettier.with {
       condition = function()
         return not is_biome and not is_yarn_pnp
       end,
