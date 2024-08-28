@@ -1,9 +1,6 @@
 return {
   { 'lbrayner/vim-rzip',      lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
-  require 'config.toggleterm',
-  require 'config.none-ls',
-  require 'config.mini',
   { 'soulis-1256/eagle.nvim',    config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.
@@ -176,12 +173,12 @@ return {
     end,
   },
   {
-    "nvim-pack/nvim-spectre",
+    'nvim-pack/nvim-spectre',
     keys = {
-      { '<F4>', "<cmd>SpectreWithCWD<cr>", mode = { 'n' } },
+      { '<F4>', '<cmd>SpectreWithCWD<cr>', mode = { 'n' } },
     },
     config = function()
-      require('spectre').setup({ is_block_ui_break = true })
+      require('spectre').setup { is_block_ui_break = true }
     end,
   },
   {
@@ -195,8 +192,11 @@ return {
     opts = {
       -- add any custom options here
     },
-    keys = {
-
-    }
+    keys = {},
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {},
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
   },
 }
