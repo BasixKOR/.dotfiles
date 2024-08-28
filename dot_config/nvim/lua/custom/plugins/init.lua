@@ -1,10 +1,10 @@
 return {
-  { 'lbrayner/vim-rzip', lazy = true },
+  { 'lbrayner/vim-rzip',      lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
   require 'config.toggleterm',
   require 'config.none-ls',
   require 'config.mini',
-  { 'soulis-1256/eagle.nvim', config = true },
+  { 'soulis-1256/eagle.nvim',    config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.
     'mbbill/undotree',
@@ -87,8 +87,8 @@ return {
   {
     'NeogitOrg/neogit',
     dependencies = {
-      'nvim-lua/plenary.nvim', -- required
-      'sindrets/diffview.nvim', -- optional - Diff integration
+      'nvim-lua/plenary.nvim',         -- required
+      'sindrets/diffview.nvim',        -- optional - Diff integration
       'nvim-telescope/telescope.nvim', -- optional
     },
     config = true,
@@ -137,7 +137,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
   },
-  { 'nvim-neorg/neorg', opts = {} },
+  { 'nvim-neorg/neorg',          opts = {} },
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
   {
     'doctorfree/cheatsheet.nvim',
@@ -175,5 +175,28 @@ return {
       }
     end,
   },
-  'b0o/schemastore.nvim',
+  {
+    "nvim-pack/nvim-spectre",
+    keys = {
+      { '<F4>', "<cmd>SpectreWithCWD<cr>", mode = { 'n' } },
+    },
+    config = function()
+      require('spectre').setup({ is_block_ui_break = true })
+    end,
+  },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    opts = {},
+  }, -- Lua
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre', -- this will only start session saving when an actual file was opened
+    opts = {
+      -- add any custom options here
+    },
+    keys = {
+
+    }
+  },
 }
