@@ -37,6 +37,7 @@ return {
     require('mini.animate').setup()
 
     require('mini.icons').setup()
+    MiniIcons.mock_nvim_web_devicons()
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
