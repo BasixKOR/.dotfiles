@@ -30,8 +30,13 @@ return {
     }
 
     require('mini.operators').setup()
+
     require('mini.files').setup()
-		vim.keymap.set('n', '<leader>-', MiniFiles.open)
+    vim.keymap.set('n', '<leader>-', MiniFiles.open)
+
+    require('mini.animate').setup()
+
+    require('mini.icons').setup()
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
