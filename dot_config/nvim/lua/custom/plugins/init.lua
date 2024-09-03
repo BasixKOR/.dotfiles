@@ -1,7 +1,7 @@
 return {
   { 'lbrayner/vim-rzip',      lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
-  { 'soulis-1256/eagle.nvim',    config = true },
+  { 'soulis-1256/eagle.nvim', config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.
     'mbbill/undotree',
@@ -175,8 +175,9 @@ return {
   {
     'nvim-pack/nvim-spectre',
     keys = {
-      { '<F4>', '<cmd>SpectreWithCWD<cr>', mode = { 'n' } },
+      { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
     },
+    cmd = { 'Spectre' },
     config = function()
       require('spectre').setup { is_block_ui_break = true }
     end,
