@@ -153,5 +153,7 @@ vim.g.neovide_scroll_animation_length = 1.0
 o.foldmethod = "expr"
 o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
-o.foldlevel = 9999
-o.foldlevelstart = 1
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
