@@ -106,7 +106,7 @@ fi
 alias mv='mv -i'
 alias cp='cp -i'
 alias y='yarn'
-
+alias pick='pushd $(fd -td | fzf)'
 
 # Chezmoi completions
 if (( $+commands[chezmoi] )); then
