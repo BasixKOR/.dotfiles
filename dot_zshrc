@@ -132,6 +132,10 @@ if (( $+commands[fzf] )); then
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
 fi
 
+if (( $+commands[lazygit] )); then
+  alias lg=lazygit
+fi
+
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
