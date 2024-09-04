@@ -76,7 +76,9 @@ local servers = {
   eslint = {
     nodePath = is_yarn_pnp and util.path.join(root_path, '.yarn/sdks') or nil,
   },
-  bashls = {},
+  bashls = {
+    filetypes = { 'sh', 'zsh' },
+  },
 
   lua_ls = {
     Lua = {
