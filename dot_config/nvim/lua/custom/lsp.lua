@@ -120,6 +120,9 @@ local servers = {
       },
     },
   },
+  denols = {
+    root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+  },
 }
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
@@ -157,16 +160,20 @@ null_ls.setup {
         return not is_biome and is_yarn_pnp
       end,
     },
-
     null_ls.builtins.formatting.prettier.with {
       condition = function()
         return not is_biome and not is_yarn_pnp
       end,
     },
-
+    null_ls.builtins.formatting.biome.with {
+      dynamic_command = command_resolver.from_yarn_pnp(),
+      condition = function()
+        return is_biome and is_yarn_pnp
+      end,
+    },
     null_ls.builtins.formatting.biome.with {
       condition = function()
-        return is_biome
+        return is_biome and not is_yarn_pnp
       end,
     },
     null_ls.builtins.formatting.stylua,

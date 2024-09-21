@@ -1,5 +1,5 @@
 return {
-  { 'lbrayner/vim-rzip',      lazy = true },
+  { 'lbrayner/vim-rzip', lazy = true },
   { 'zbirenbaum/copilot.lua', config = true },
   { 'soulis-1256/eagle.nvim', config = true },
   {
@@ -84,8 +84,8 @@ return {
   {
     'NeogitOrg/neogit',
     dependencies = {
-      'nvim-lua/plenary.nvim',         -- required
-      'sindrets/diffview.nvim',        -- optional - Diff integration
+      'nvim-lua/plenary.nvim', -- required
+      'sindrets/diffview.nvim', -- optional - Diff integration
       'nvim-telescope/telescope.nvim', -- optional
     },
     config = true,
@@ -134,7 +134,24 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
   },
-  { 'nvim-neorg/neorg',          opts = {} },
+  {
+    'nvim-neorg/neorg',
+    version = 'v8.8.1',
+    opts = {
+      load = {
+        ['core.defaults'] = {},
+        ['core.concealer'] = {},
+        ['core.dirman'] = {
+          config = {
+            workspaces = {
+              notes = '~/notes',
+            },
+            default_workspace = 'notes',
+          },
+        },
+      },
+    },
+  },
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
   {
     'doctorfree/cheatsheet.nvim',
@@ -178,9 +195,16 @@ return {
       { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
     },
     cmd = { 'Spectre' },
-    config = function()
-      require('spectre').setup { is_block_ui_break = true }
-    end,
+    cond = vim.fn.executable('cargo') == 1,
+    build = './build.sh',
+    config = {
+      is_block_ui_break = true,
+      default = {
+        replace = {
+          cmd = 'oxi',
+        },
+      },
+    },
   },
   {
     'nvimdev/dashboard-nvim',
