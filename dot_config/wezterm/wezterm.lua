@@ -12,4 +12,6 @@ config.font = wezterm.font_with_fallback({
 	'D2Coding',
 })
 
+config.native_macos_fullscreen_mode = true
+
 return config
