@@ -144,6 +144,8 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+      root_dir = (servers[server_name] or {}).root_dir,
+      single_file_support = (servers[server_name] or {}).single_file_support,
     }
   end,
 }
