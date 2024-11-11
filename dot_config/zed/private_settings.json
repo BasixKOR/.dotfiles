@@ -7,7 +7,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Gruvbox Dark Hard",
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "theme": "Catppuccin Frappé",
   "buffer_font_size": 14,
   "vim_mode": true,
   "buffer_font_family": "CaskaydiaCove NFM",
