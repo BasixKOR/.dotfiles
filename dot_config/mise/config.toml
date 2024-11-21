@@ -1,6 +1,5 @@
 [tools]
 node = '20'
-python = '3.10'
 gleam = 'latest'
 elixir = '1.14'
 erlang = '25' # https://hexdocs.pm/elixir/1.14.4/compatibility-and-deprecations.html
@@ -9,6 +8,7 @@ deno = "latest"
 "npm:prettier" = "latest"
 kubectl = "latest"
 usage = "0.3.0"
+python = ["3.12", "3.11"]
 
 [settings]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
