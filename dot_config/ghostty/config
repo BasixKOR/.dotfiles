@@ -1,0 +1,13 @@
+theme = catppuccin-mocha
+
+font-family = "NeoDunggeunmo Code"
+font-size = 16
+
+macos-titlebar-style = tabs
+background-opacity = 0.85
+background-blur-radius = 20
+
+mouse-hide-while-typing = true
+
+# Local
+config-file = "config-local"
