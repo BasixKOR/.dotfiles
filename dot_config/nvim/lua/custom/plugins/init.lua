@@ -21,7 +21,6 @@ return {
   {
     'simnalamburt/vim-tiny-ime',
     cond = vim.fn.has 'macunix',
-    build = './build',
   },
   {
     'bkad/CamelCaseMotion',
