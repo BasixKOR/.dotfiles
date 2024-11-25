@@ -7,5 +7,8 @@ return {
       flavour = 'mocha',
       transparent_background = os.getenv 'TERM' == 'xterm-ghostty',
     },
-  }
+    init = function()
+      vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
 }

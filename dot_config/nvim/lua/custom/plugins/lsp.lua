@@ -1,4 +1,4 @@
-local function first_defined(...)
+local function coalesce(...)
   local funcs = { ... }
   return function(...)
     for _, func in ipairs(funcs) do
@@ -278,8 +278,8 @@ return {
           command = function(self, bufnr)
             local util = require 'conform.util'
             local fs = require 'conform.fs'
-            return first_defined(
-              util.find_executable({ '.yarn/sdks/prettier/bin-prettier.js' }),
+            return coalesce(
+              util.find_executable { '.yarn/sdks/prettier/bin-prettier.js' },
               util.from_node_modules(fs.is_windows and 'prettier.cmd' or 'prettier')
             )(self, bufnr)
           end,
