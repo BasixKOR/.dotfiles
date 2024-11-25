@@ -1,6 +1,5 @@
 return {
   { 'lbrayner/vim-rzip', lazy = true },
-  { 'zbirenbaum/copilot.lua', config = true },
   { 'soulis-1256/eagle.nvim', config = true },
   {
     -- For some reason the last release is in 2019, change this to use version when releases.

@@ -10,9 +10,9 @@ return {
     },
     config = {
       strategies = {
-        chat = { adapter = "copilot" },
-        inline = { adapter = "copilot" },
-      }
+        chat = { adapter = 'copilot' },
+        inline = { adapter = 'copilot' },
+      },
     },
   },
 }
