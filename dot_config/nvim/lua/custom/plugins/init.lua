@@ -40,10 +40,6 @@ return {
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-  },
-  {
     'folke/trouble.nvim',
     opts = {}, -- for default options, refer to the configuration section for custom setup.
     cmd = 'Trouble',
@@ -106,12 +102,6 @@ return {
         bin_path = tsc_path,
       }
     end,
-  },
-  {
-    'kylechui/nvim-surround',
-    version = '*', -- Use for stability; omit to use `main` branch for the latest features
-    event = 'VeryLazy',
-    opts = {},
   },
   {
     'folke/flash.nvim',
