@@ -8,7 +8,28 @@ return {
     --  - va)  - [V]isually select [A]round [)]paren
     --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
     --  - ci'  - [C]hange [I]nside [']quote
-    require('mini.ai').setup { n_lines = 500 }
+    local ai = require 'mini.ai'
+    ai.setup {
+      n_lines = 500,
+      custom_textobjects = {
+        -- https://github.com/LazyVim/LazyVim/blob/eb525c680d0423f5addb12e10f87ce5b81fc0d9e/lua/lazyvim/plugins/coding.lua
+        o = ai.gen_spec.treesitter { -- code block
+          a = { '@block.outer', '@conditional.outer', '@loop.outer' },
+          i = { '@block.inner', '@conditional.inner', '@loop.inner' },
+        },
+        f = ai.gen_spec.treesitter { a = '@function.outer', i = '@function.inner' }, -- function
+        c = ai.gen_spec.treesitter { a = '@class.outer', i = '@class.inner' }, -- class
+        j = ai.gen_spec.treesitter { a = '@jsx_tag.outer', i = '@jsx_tag.inner' }, -- class
+        t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' }, -- tags
+        d = { '%f[%d]%d+' }, -- digits
+        e = { -- Word with case
+          { '%u[%l%d]+%f[^%l%d]', '%f[%S][%l%d]+%f[^%l%d]', '%f[%P][%l%d]+%f[^%l%d]', '^[%l%d]+%f[^%l%d]' },
+          '^().*()$',
+        },
+        u = ai.gen_spec.function_call(), -- u for "Usage"
+        U = ai.gen_spec.function_call { name_pattern = '[%w_]' }, -- without dot in function name
+      },
+    }
 
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
