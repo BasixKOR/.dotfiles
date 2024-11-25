@@ -290,9 +290,9 @@ return {
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        typescriptreact = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
+        javascript = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
+        typescriptreact = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
       },
