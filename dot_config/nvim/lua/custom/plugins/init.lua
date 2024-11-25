@@ -194,7 +194,7 @@ return {
       { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
     },
     cmd = { 'Spectre' },
-    cond = vim.fn.executable('cargo') == 1,
+    cond = vim.fn.executable 'cargo' == 1,
     build = './build.sh',
     config = {
       is_block_ui_break = true,
@@ -221,6 +221,7 @@ return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
     opts = {},
+    ft = { 'markdown', 'codecompanion' }, -- see ai.lua
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
   },
 }
