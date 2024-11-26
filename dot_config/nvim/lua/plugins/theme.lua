@@ -13,6 +13,7 @@ return {
         snacks = true,
         lsp_trouble = true,
         which_key = true,
+        octo = true,
       },
     },
     init = function()
