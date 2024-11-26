@@ -7,7 +7,7 @@
 
 -- Original: https://github.com/suhdonghwi/dotfiles/blob/76caf8d5ff0401a1c5d1bb1225509732346e4461/private_dot_config/nvim/lua/options.lua
 
-vim.cmd("language en_US.UTF-8")
+vim.cmd 'language en_US.UTF-8'
 
 local o = vim.o
 local opt = vim.opt
@@ -26,12 +26,12 @@ o.undolevels = 1000
 o.undofile = true
 
 -- Enable mouse for all available modes
-o.mouse = "a"
+o.mouse = 'a'
 -- Mouse scrolling unit is a single line
-o.mousescroll = "ver:1"
+o.mousescroll = 'ver:1'
 
 -- Enable all filetype plugins
-vim.cmd("filetype plugin indent on")
+vim.cmd 'filetype plugin indent on'
 
 -- Hybrid line number
 o.number = true
@@ -55,7 +55,7 @@ o.splitbelow = true
 o.splitright = true
 
 -- Reduce scroll during window split
-o.splitkeep = "screen"
+o.splitkeep = 'screen'
 
 -- Don't show mode in command line
 o.showmode = false
@@ -66,13 +66,13 @@ o.ruler = false
 o.wrap = false
 
 -- Keep signcolumn on by default
-o.signcolumn = "yes"
+o.signcolumn = 'yes'
 
 -- Don't show `~` outside of buffer
-o.fillchars = "eob: "
+o.fillchars = 'eob: '
 
 -- Set completeopt to have a better completion experience
-o.completeopt = "menuone,noinsert,noselect"
+o.completeopt = 'menuone,noinsert,noselect'
 
 o.tabstop = 2
 o.shiftwidth = 2
@@ -96,37 +96,37 @@ o.timeoutlen = 300
 o.termguicolors = true
 
 -- Change input source to English when leaving insert mode
-vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch -s 0')" })
+vim.api.nvim_create_autocmd('InsertLeave', { command = "call jobstart('xkbswitch -s 0')" })
 
 -- Diff fillchar
-opt.fillchars:append({ diff = "╱" })
+opt.fillchars:append { diff = '╱' }
 
 -- Set diagnostic virtual text prefix
-vim.diagnostic.config({
-	virtual_text = {
-		prefix = "▎", -- Could be '●', '▎', 'x'
-	},
-})
+vim.diagnostic.config {
+  virtual_text = {
+    prefix = '▎', -- Could be '●', '▎', 'x'
+  },
+}
 
 -- Set diagnostic signs
-local diagnostic_sign = "󱓻"
+local diagnostic_sign = '󱓻'
 local signs = {
-	Error = diagnostic_sign,
-	Warn = diagnostic_sign,
-	Hint = diagnostic_sign,
-	Info = diagnostic_sign,
+  Error = diagnostic_sign,
+  Warn = diagnostic_sign,
+  Hint = diagnostic_sign,
+  Info = diagnostic_sign,
 }
 for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
 -- Set LSP floating windows border
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-	opts = opts or {}
-	opts.border = opts.border or "rounded"
-	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or 'rounded'
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 -- Format on save
@@ -138,20 +138,20 @@ end
 -- })
 
 -- Change cwd based on opening file path
-vim.cmd([[
+vim.cmd [[
 augroup cdpwd
     autocmd!
     autocmd VimEnter * cd %:p:h
 augroup END
-]])
+]]
 
 -- Set gui font (for Neovide)
-vim.cmd([[set guifont=CaskaydiaCove\ Nerd\ Font:h14]])
+vim.cmd [[set guifont=CaskaydiaCove\ Nerd\ Font:h14]]
 vim.g.neovide_scroll_animation_length = 1.0
 
 -- set folding method
-o.foldmethod = "expr"
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldmethod = 'expr'
+o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 o.foldcolumn = '1' -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
