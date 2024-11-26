@@ -8,7 +8,7 @@ return {
       -- optional:
       'MeanderingProgrammer/render-markdown.nvim',
     },
-    config = {
+    opts = {
       strategies = {
         chat = { adapter = 'copilot' },
         inline = { adapter = 'copilot' },

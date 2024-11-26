@@ -182,7 +182,7 @@ return {
     cmd = { 'Spectre' },
     cond = vim.fn.executable 'cargo' == 1,
     build = './build.sh',
-    config = {
+    opts = {
       is_block_ui_break = true,
       default = {
         replace = {
