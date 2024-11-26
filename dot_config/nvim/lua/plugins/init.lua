@@ -256,4 +256,16 @@ return {
     },
     config = true,
   },
+  {
+    'utilyre/barbecue.nvim',
+    name = 'barbecue',
+    version = '*',
+    dependencies = {
+      'SmiteshP/nvim-navic',
+    },
+    opts = {
+      exclude_filetypes = { 'oil', 'toggleterm', 'minifiles', 'snacks_terminal' },
+      theme = 'catppuccin',
+    },
+  },
 }
