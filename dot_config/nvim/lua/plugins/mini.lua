@@ -19,7 +19,7 @@ return {
         },
         f = ai.gen_spec.treesitter { a = '@function.outer', i = '@function.inner' }, -- function
         c = ai.gen_spec.treesitter { a = '@class.outer', i = '@class.inner' }, -- class
-        j = ai.gen_spec.treesitter { a = '@jsx_tag.outer', i = '@jsx_tag.inner' }, -- class
+        j = ai.gen_spec.treesitter { a = '@jsx_tag.outer', i = '@jsx_tag.inner' }, -- jsx tags
         t = { '<([%p%w]-)%f[^<%w][^<>]->.-</%1>', '^<.->().*()</[^/]->$' }, -- tags
         d = { '%f[%d]%d+' }, -- digits
         e = { -- Word with case
@@ -84,12 +84,14 @@ return {
     require('mini.operators').setup()
 
     require('mini.files').setup()
-    vim.keymap.set('n', '<leader>-', MiniFiles.open)
+    vim.keymap.set('n', '<leader>-', MiniFiles.open, { desc = 'Open mini.files' })
 
     require('mini.animate').setup()
 
-    require('mini.icons').setup()
-    MiniIcons.mock_nvim_web_devicons()
+    if vim.g.have_nerd_font then
+      require('mini.icons').setup()
+      MiniIcons.mock_nvim_web_devicons()
+    end
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
