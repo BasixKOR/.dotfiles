@@ -76,15 +76,6 @@ return {
     },
   },
   {
-    'NeogitOrg/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim', -- required
-      'sindrets/diffview.nvim', -- optional - Diff integration
-      'nvim-telescope/telescope.nvim', -- optional
-    },
-    config = true,
-  },
-  {
     'dmmulroy/tsc.nvim',
     event = 'VeryLazy',
     dependencies = { 'rcarriga/nvim-notify' },
