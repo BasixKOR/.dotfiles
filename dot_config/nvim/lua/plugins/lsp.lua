@@ -25,6 +25,8 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       -- Use SchemaStore for getting schemas
       'b0o/schemastore.nvim',
+      -- Live rename!
+      'saecki/live-rename.nvim',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -67,7 +69,7 @@ return {
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>rn', require('live-rename').map(), '[R]e[n]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
