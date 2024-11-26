@@ -20,3 +20,7 @@ Brewfile
 
 .chezmoiscripts/*/**
 !.chezmoiscripts/{{ .chezmoi.os }}/**
+
+# Configurations meant for repository
+mise.toml
+lefthook.yml

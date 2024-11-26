@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+if command -v nvim &>/dev/null; then
+  echo "please update lazy-lock.json"
+fi

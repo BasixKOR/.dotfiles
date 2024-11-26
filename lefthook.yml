@@ -1,0 +1,21 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+#
+pre-push:
+  scripts:
+    update-lockfile:
+      runner: bash
+pre-commit:
+  parallel: true
+  commands:
+    stylua:
+      glob: "*.lua"
+      run: stylua {staged_files}
+      stage_fixed: true
+  scripts:
+    "hello.js":
+      runner: node
+    "any.go":
+      runner: go run
