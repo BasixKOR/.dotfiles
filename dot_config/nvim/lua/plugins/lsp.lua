@@ -224,6 +224,7 @@ return {
         'stylua', -- Used to format Lua code
         'biome',
         'shfmt',
+        'sqlfluff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -295,6 +296,7 @@ return {
         typescriptreact = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
+        sql = { 'sqlfluff' },
       },
     },
   },
