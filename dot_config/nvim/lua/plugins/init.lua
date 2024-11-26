@@ -35,13 +35,6 @@ return {
     cond = vim.fn.has 'macunix',
   },
   {
-    'bkad/CamelCaseMotion',
-    event = 'VeryLazy',
-    config = function()
-      vim.g.camelcasemotion_key = '\\'
-    end,
-  },
-  {
     'stevearc/oil.nvim',
     lazy = false,
     opts = {},
