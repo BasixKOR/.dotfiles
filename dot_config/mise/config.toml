@@ -34,3 +34,6 @@ experimental = true
 
 # python-build
 python_compile = true
+
+# prefer uv-based installation for pipx based packages
+pipx.uvx = true
