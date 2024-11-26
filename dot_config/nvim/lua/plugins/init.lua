@@ -1,4 +1,10 @@
 return {
+  {
+    'rcarriga/nvim-notify',
+    init = function()
+      vim.notify = require 'notify'
+    end,
+  },
   { 'lbrayner/vim-rzip', lazy = true },
   { 'soulis-1256/eagle.nvim', config = true },
   {
