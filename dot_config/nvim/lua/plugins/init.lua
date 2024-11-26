@@ -14,14 +14,21 @@ return {
     cmd = 'UndotreeToggle',
   },
   {
-    'mg979/vim-visual-multi',
-    init = function()
-      vim.g.VM_mouse_mappings = 1
-      vim.g.VM_maps = {
-        ['Select Cursor Down'] = '<M-C-Down>',
-        ['Select Cursor Up'] = '<M-C-Up>',
-      }
-    end,
+    'smoka7/multicursors.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'nvimtools/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    keys = {
+      {
+        mode = { 'v', 'n' },
+        '<Leader>m',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
+    },
   },
   {
     'simnalamburt/vim-tiny-ime',
