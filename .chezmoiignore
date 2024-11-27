@@ -11,7 +11,7 @@ AppData
 {{ end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
-Brewfile
+.Brewfile
 .1password
 {{ end }}
 {{ if ne .chezmoi.os "freebsd" }}
