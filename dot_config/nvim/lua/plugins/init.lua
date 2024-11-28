@@ -205,11 +205,6 @@ return {
     },
   },
   {
-    'nvimdev/dashboard-nvim',
-    event = 'VimEnter',
-    opts = {},
-  }, -- Lua
-  {
     'folke/persistence.nvim',
     event = 'BufReadPre', -- this will only start session saving when an actual file was opened
     config = function()
@@ -283,5 +278,9 @@ return {
       exclude_filetypes = { 'oil', 'toggleterm', 'minifiles', 'snacks_terminal' },
       theme = 'catppuccin',
     },
+  },
+  {
+    'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
   },
 }

@@ -94,6 +94,15 @@ return {
     end
 
     require('mini.tabline').setup()
+
+    local starter = require 'mini.starter'
+    starter.setup {
+      items = {
+        starter.sections.builtin_actions(),
+        starter.sections.telescope(),
+        starter.sections.recent_files(10, true),
+      },
+    }
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
