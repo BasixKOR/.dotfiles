@@ -82,6 +82,8 @@ return {
     }
 
     require('mini.operators').setup()
+    require('mini.pairs').setup()
+    require('mini.bufremove').setup()
 
     require('mini.files').setup()
     vim.keymap.set('n', '<leader>-', MiniFiles.open, { desc = 'Open mini.files' })
@@ -99,6 +101,11 @@ return {
     starter.setup {
       items = {
         starter.sections.builtin_actions(),
+        {
+          name = 'Open Oil.nvim',
+          action = 'Oil',
+          section = 'Builtin actions', -- techincally not, but i'd like them grouped.
+        },
         starter.sections.telescope(),
         starter.sections.recent_files(10, true),
       },
