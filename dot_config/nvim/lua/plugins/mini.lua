@@ -92,6 +92,8 @@ return {
       require('mini.icons').setup()
       MiniIcons.mock_nvim_web_devicons()
     end
+
+    require('mini.tabline').setup()
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
