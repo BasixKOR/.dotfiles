@@ -132,24 +132,6 @@ return {
       require('telescope').load_extension 'chezmoi'
     end,
   },
-  {
-    'nvim-neorg/neorg',
-    version = 'v8.8.1',
-    opts = {
-      load = {
-        ['core.defaults'] = {},
-        ['core.concealer'] = {},
-        ['core.dirman'] = {
-          config = {
-            workspaces = {
-              notes = '~/notes',
-            },
-            default_workspace = 'notes',
-          },
-        },
-      },
-    },
-  },
   { 'akinsho/git-conflict.nvim', version = '*', config = true },
   {
     'doctorfree/cheatsheet.nvim',
@@ -281,6 +263,14 @@ return {
   },
   {
     'nvim-telescope/telescope-file-browser.nvim',
+    event = 'VeryLazy',
     dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' },
+  },
+  {
+    'gbprod/yanky.nvim',
+    dependencies = { 'kkharji/sqlite.lua' },
+    config = function()
+      require('telescope').load_extension 'yank_history'
+    end,
   },
 }

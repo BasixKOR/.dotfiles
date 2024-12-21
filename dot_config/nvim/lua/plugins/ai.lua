@@ -1,5 +1,5 @@
 return {
-  'github/copilot.vim', -- Provides Copilot connection and authentication
+  { 'github/copilot.vim', event = 'BufWritePre' }, -- Provides Copilot connection and authentication
   {
     'olimorris/codecompanion.nvim',
     dependencies = {
@@ -8,6 +8,7 @@ return {
       -- optional:
       'MeanderingProgrammer/render-markdown.nvim',
     },
+    cmd = { 'CodeCompanion', 'CodeCompanionActions', 'CodeCompanionChat', 'CodeCompanionCmd' },
     opts = {
       strategies = {
         chat = { adapter = 'copilot' },

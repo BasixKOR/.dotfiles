@@ -21,6 +21,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       {
         'j-hui/fidget.nvim',
+        event = { 'BufReadPre' },
         opts = {
           -- https://github.com/catppuccin/nvim#integrations -- see fidget section
           notification = {
@@ -222,6 +223,12 @@ return {
         },
         ruff = {},
         basedpyright = {},
+        clangd = {
+          cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
+          init_options = {
+            fallbackFlags = { '-std=c++17' },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
