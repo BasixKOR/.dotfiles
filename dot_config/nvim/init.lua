@@ -346,41 +346,22 @@ require('lazy').setup({
     ---@type blink.cmp.Config
     opts = {
       keymap = { preset = 'super-tab' },
-      highlight = {
-        -- sets the fallback highlight groups to nvim-cmp's highlight groups
-        -- useful for when your theme doesn't support blink.cmp
-        -- will be removed in a future release, assuming themes add support
+      appearance = {
         use_nvim_cmp_as_default = true,
       },
-      -- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- adjusts spacing to ensure icons are aligned
-      nerd_font_variant = 'mono',
-      accept = {
-        expand_snippet = function(snippet)
-          require('luasnip').lsp_expand(snippet)
-        end,
-      },
-      windows = {
+      completion = {
+        accept = { auto_brackets = { enabled = false } },
         documentation = { auto_show = true },
       },
-      trigger = { signature_help = { enabled = true } },
+      snippets = { preset = 'luasnip' },
       sources = {
-        completion = {
-          enabled_providers = { 'lazydev', 'lsp', 'luasnip', 'path', 'buffer' },
-        },
+        default = { 'lazydev', 'lsp', 'snippets', 'path', 'buffer' },
         providers = {
-          lsp = { name = 'LSP', fallback_for = { 'lazydev' } },
-          lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink' },
-          luasnip = {
-            name = 'luasnip',
-            module = 'blink.compat.source',
-
-            score_offset = -3,
-
-            opts = {
-              use_show_condition = false,
-              show_autosnippets = true,
-            },
+          lsp = { name = 'LSP' },
+          lazydev = {
+            name = 'LazyDev',
+            module = 'lazydev.integrations.blink',
+            fallbacks = { 'lsp' },
           },
         },
       },
