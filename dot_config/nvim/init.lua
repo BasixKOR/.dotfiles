@@ -335,6 +335,7 @@ require('lazy').setup({
         },
       },
       'saadparwaiz1/cmp_luasnip',
+      'fang2hou/blink-copilot',
 
       -- Adds other completion capabilities.
       --  nvim-cmp does not ship with all sources by default. They are split
@@ -355,13 +356,23 @@ require('lazy').setup({
       },
       snippets = { preset = 'luasnip' },
       sources = {
-        default = { 'lazydev', 'lsp', 'snippets', 'path', 'buffer' },
+        default = { 'lazydev', 'lsp', 'snippets', 'copilot', 'path', 'buffer' },
         providers = {
           lsp = { name = 'LSP' },
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
             fallbacks = { 'lsp' },
+          },
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100,
+            async = true,
+            opts = {
+              max_completions = 3,
+              max_attempts = 4,
+            },
           },
         },
       },

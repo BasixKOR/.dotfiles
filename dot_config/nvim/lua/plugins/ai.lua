@@ -1,5 +1,13 @@
 return {
-  { 'github/copilot.vim', event = 'BufWritePre' }, -- Provides Copilot connection and authentication
+  {
+    'zbirenbaum/copilot.lua',
+    event = 'BufWritePre',
+    cmd = 'Copilot',
+    build = ':Copilot auth',
+    opts = {
+      suggestion = { enabled = false },
+    },
+  }, -- Provides Copilot connection and authentication
   {
     'olimorris/codecompanion.nvim',
     dependencies = {
