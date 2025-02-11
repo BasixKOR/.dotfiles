@@ -92,7 +92,7 @@ return {
 
     require('mini.splitjoin').setup {
       mappings = {
-        toggle = 'gs',
+        toggle = 'gS',
       },
     }
 
