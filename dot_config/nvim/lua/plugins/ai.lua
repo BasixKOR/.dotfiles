@@ -19,8 +19,13 @@ return {
     cmd = { 'CodeCompanion', 'CodeCompanionActions', 'CodeCompanionChat', 'CodeCompanionCmd' },
     opts = {
       strategies = {
-        chat = { adapter = 'copilot' },
-        inline = { adapter = 'copilot' },
+        chat = {
+          adapter = 'gemini',
+        },
+        inline = {
+          adapter = 'copilot',
+          model = 'claude-3.5-sonnet',
+        },
       },
     },
   },
