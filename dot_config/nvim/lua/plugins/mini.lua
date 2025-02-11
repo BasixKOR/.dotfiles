@@ -125,6 +125,10 @@ return {
         starter.sections.recent_files(10, true),
       },
     }
+    local starter_open = function()
+      MiniStarter.open()
+    end
+    vim.api.nvim_create_autocmd('TabNewEntered', { nested = true, callback = starter_open })
   end,
   dependencies = {
     'JoosepAlviste/nvim-ts-context-commentstring',
