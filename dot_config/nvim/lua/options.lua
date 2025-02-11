@@ -157,3 +157,11 @@ o.foldcolumn = '1' -- '0' is not bad
 o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 o.foldlevelstart = 99
 o.foldenable = true
+
+-- gopass security
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  pattern = { '/dev/shm/gopass*', '/private/**/gopass**' },
+  callback = function()
+    vim.cmd 'setlocal noswapfile nobackup noundofile shada=""'
+  end,
+})
