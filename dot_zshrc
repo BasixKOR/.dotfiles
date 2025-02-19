@@ -136,6 +136,11 @@ if (( $+commands[lazygit] )); then
   alias lg=lazygit
 fi
 
+# krew
+if (( $+commands[kubectl-krew] )); then
+  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+fi
+
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
