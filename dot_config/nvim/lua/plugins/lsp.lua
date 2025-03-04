@@ -229,6 +229,7 @@ return {
             fallbackFlags = { '-std=c++17' },
           },
         },
+        graphql = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -320,6 +321,7 @@ return {
         sh = { 'shfmt' },
         bash = { 'shfmt' },
         sql = { 'sqlfluff' },
+        yaml = { 'prettier' },
       },
     },
   },
