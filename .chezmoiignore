@@ -8,6 +8,7 @@ README.md
 {{ if ne .chezmoi.os "windows" }}
 .config/git/git-prompt.sh
 AppData
+Scoopfile.json
 {{ end }}
 {{ if ne .chezmoi.os "darwin" }}
 Library
