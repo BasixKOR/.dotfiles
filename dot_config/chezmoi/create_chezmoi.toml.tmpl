@@ -1,7 +1,7 @@
 {{- if lookPath "age" -}}
 encryption = "age"
 {{- end }}
-{{- if lookPath "nvim" -}}
+{{- if lookPath "nvim" }}
 [merge]
     command = "nvim"
     args = ["-d", {{`"{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"`}}]
