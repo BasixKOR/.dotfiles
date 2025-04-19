@@ -168,7 +168,6 @@ return {
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
-        -- tsserver = {}, -- replaced with typescript-tools
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
         eslint = {
           nodePath = is_yarn_pnp and util.path.join(root_path, '.yarn/sdks') or nil,
@@ -230,6 +229,7 @@ return {
           },
         },
         graphql = {},
+        svelte = {},
       }
 
       -- Ensure the servers and tools above are installed
@@ -318,6 +318,7 @@ return {
         javascript = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', 'biome', stop_after_first = true },
+        svelte = { 'prettierd', 'prettier', lsp_format = 'fallvack', stop_after_first = true },
         sh = { 'shfmt' },
         bash = { 'shfmt' },
         sql = { 'sqlfluff' },
