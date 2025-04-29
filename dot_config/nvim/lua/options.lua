@@ -63,7 +63,7 @@ o.showmode = false
 o.ruler = false
 
 -- Display long lines as just one line
-o.wrap = false
+o.wrap = true
 
 -- Keep signcolumn on by default
 o.signcolumn = 'yes'
