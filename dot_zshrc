@@ -162,7 +162,7 @@ if [[ -d "$HOME/.volta" ]]; then
   export PATH="$VOLTA_HOME/bin:$PATH"
 fi
 
-if [[ -d "$HOME/.cargo" ]]; then
+if [[ -f "$HOME/.cargo/env" ]]; then
   source "$HOME/.cargo/env"
 fi
 
