@@ -230,6 +230,9 @@ return {
         },
         graphql = {},
         svelte = {},
+        tailwindcss = {
+          classFunctions = { 'tw', 'clsx', 'cn', 'cva' },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -248,7 +251,6 @@ return {
         'biome',
         'shfmt',
         'sqlfluff',
-        'tailwindcss',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
