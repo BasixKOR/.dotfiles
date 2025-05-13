@@ -166,6 +166,10 @@ if [[ -f "$HOME/.cargo/env" ]]; then
   source "$HOME/.cargo/env"
 fi
 
+if [[ -d '/opt/homebrew/opt/rustup/bin' ]]; then
+  export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+fi
+
 if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
 fi
