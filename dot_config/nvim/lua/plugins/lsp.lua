@@ -170,7 +170,9 @@ return {
         rust_analyzer = {},
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
         eslint = {
-          nodePath = is_yarn_pnp and util.path.join(root_path, '.yarn/sdks') or nil,
+          settings = {
+            nodePath = is_yarn_pnp and util.path.join(root_path, '.yarn/sdks') or '',
+          },
         },
         bashls = {},
 
@@ -184,37 +186,37 @@ return {
         },
 
         yamlls = {
-          schemaStore = {
-            enable = true,
+          settings = {
+            yaml = {
+              schemaStore = {
+                enable = true,
+              },
+              schemas = {
+                kubernetes = '*.yaml',
+                ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
+                ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
+                ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
+                ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
+                ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
+                ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
+                ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
+                ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
+                ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
+                ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
+                ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
+                ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
+                ['https://taskfile.dev/schema.json'] = 'Taskfile.yml',
+                ['https://yarnpkg.com/configuration/yarnrc.json'] = '.yarnrc.yml',
+                ['https://json.schemastore.org/circleciconfig.json'] = '.circleci/config.yml',
+              }, -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw/
+            },
           },
-          schemas = {
-            kubernetes = '*.yaml',
-            ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
-            ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
-            ['http://json.schemastore.org/ansible-stable-2.9'] = 'roles/tasks/*.{yml,yaml}',
-            ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
-            ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
-            ['http://json.schemastore.org/ansible-playbook'] = '*play*.{yml,yaml}',
-            ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
-            ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
-            ['https://json.schemastore.org/gitlab-ci'] = '*gitlab-ci*.{yml,yaml}',
-            ['https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/schemas/v3.1/schema.json'] = '*api*.{yml,yaml}',
-            ['https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json'] = '*docker-compose*.{yml,yaml}',
-            ['https://raw.githubusercontent.com/argoproj/argo-workflows/master/api/jsonschema/schema.json'] = '*flow*.{yml,yaml}',
-            ['https://taskfile.dev/schema.json'] = 'Taskfile.yml',
-            ['https://yarnpkg.com/configuration/yarnrc.json'] = '.yarnrc.yml',
-            ['https://json.schemastore.org/circleciconfig.json'] = '.circleci/config.yml',
-          }, -- https://www.reddit.com/r/neovim/comments/ze9gbe/comment/iz59clw/
         },
 
         terraformls = {},
         jsonls = {
-          settings = {
-            json = {
-              schemas = require('schemastore').json.schemas(),
-              validate = { enable = true },
-            },
-          },
+          schemas = require('schemastore').json.schemas(),
+          validate = { enable = true },
         },
         denols = {
           single_file_support = false,
@@ -231,7 +233,11 @@ return {
         graphql = {},
         svelte = {},
         tailwindcss = {
-          classFunctions = { 'tw', 'clsx', 'cn', 'cva' },
+          settings = {
+            tailwindCSS = {
+              classFunctions = { 'tw', 'clsx', 'cn', 'cva' },
+            },
+          },
         },
       }
 
