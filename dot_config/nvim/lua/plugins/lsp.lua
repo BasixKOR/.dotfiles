@@ -212,7 +212,7 @@ return {
             },
           },
         },
-        ansiblels = {}
+        ansiblels = {},
         terraformls = {},
         jsonls = {
           schemas = require('schemastore').json.schemas(),
