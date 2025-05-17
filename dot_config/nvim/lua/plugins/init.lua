@@ -87,7 +87,7 @@ return {
     dependencies = { 'rcarriga/nvim-notify' },
     config = function()
       local pnp_path = vim.fs.find('.pnp.cjs', { path = vim.fn.getcwd(), upward = true })[1]
-      local is_yarn_pnp = (vim.uv.fs_stat(pnp_path) or {}).type == 'file'
+      local is_yarn_pnp = (pnp_path and vim.uv.fs_stat(pnp_path) or {}).type == 'file'
       local tsc_path = is_yarn_pnp and table.concat { vim.fs.dirmame(pnp_path), '/.yarn/sdks/typescript/bin/tsc' }
 
       require('tsc').setup {
