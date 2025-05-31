@@ -345,6 +345,30 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+
+      -- Minuet
+      {
+        'milanglacier/minuet-ai.nvim',
+        opts = {
+          provider_options = {
+            codestral = {
+              model = 'codestral-latest',
+              api_key = 'CODESTRAL_API_KEY',
+              stream = true,
+              optional = {
+                max_tokens = 256,
+                stop = { '\n\n' },
+              },
+            },
+            gemini = {
+              model = 'gemini-2.5-flash-preview-05-20',
+              stream = true,
+              api_key = 'GEMINI_API_KEY',
+              optional = {},
+            },
+          },
+        },
+      },
     },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -352,6 +376,19 @@ require('lazy').setup({
       keymap = { preset = 'super-tab' },
       appearance = {
         use_nvim_cmp_as_default = true,
+        nerd_font_variant = 'normal',
+        kind_icons = {
+          -- LLM Provider icons
+          claude = '󰋦',
+          openai = '󱢆',
+          codestral = '󱎥',
+          gemini = '',
+          Groq = '',
+          Openrouter = '󱂇',
+          Ollama = '󰳆',
+          ['Llama.cpp'] = '󰳆',
+          Deepseek = '',
+        },
       },
       completion = {
         accept = { auto_brackets = { enabled = false } },
@@ -359,9 +396,18 @@ require('lazy').setup({
       },
       snippets = { preset = 'luasnip' },
       sources = {
-        default = { 'lazydev', 'lsp', 'snippets', 'copilot', 'path', 'buffer' },
+        default = { 'lazydev', 'lsp', 'snippets', 'copilot', 'minuet', 'path', 'buffer' },
         providers = {
           lsp = { name = 'LSP' },
+          minuet = {
+            name = 'minuet',
+            module = 'minuet.blink',
+            async = true,
+            -- Should match minuet.config.request_timeout * 1000,
+            -- since minuet.config.request_timeout is in seconds
+            timeout_ms = 3000,
+            score_offset = 50, -- Gives minuet higher priority among suggestions
+          },
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
