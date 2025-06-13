@@ -13,8 +13,7 @@ _list:
 
 [no-cd]
 yarn-extract:
-  #!/usr/bin/env bash
-  yarn set version from sources --branch @yarnpkg/cli/$(yarn -v) --no-minify
+  yarn set version from sources --branch @yarnpkg/cli/{{ shell("yarn -v") }} --no-minify
 
 # https://apple.stackexchange.com/a/466029/460194
 macos-enable-sudo-touchid:
