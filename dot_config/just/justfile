@@ -1,6 +1,8 @@
 #!/usr/bin/env just --justfile
 justfile := justfile()
 
+import '~/.justfile'
+
 _list:
   #!/usr/bin/env bash
   if command -v fzf &>/dev/null; then
