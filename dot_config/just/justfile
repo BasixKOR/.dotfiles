@@ -40,3 +40,6 @@ big-folder:
 [no-cd]
 git-branch-purge:
   git branch | cut -c 3- | gum choose --no-limit | xargs git branch -Dr
+
+curl-measure *ARGS:
+  curl -w @"{{ justfile_directory() }}/curl-format.txt" -o /dev/null {{ ARGS }} 
