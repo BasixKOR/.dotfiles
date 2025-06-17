@@ -141,6 +141,17 @@ if (( $+commands[lazygit] )); then
   alias lg=lazygit
 fi
 
+if (( $+commands[git-branchless] )); then
+  alias gr='git record'
+  alias gsl='git smartlog'
+  alias grw='git reword'
+  alias gam='git amend'
+  alias g+='git next'
+  alias g-='git prev'
+  alias gmv='git move'
+  alias gsy='git sync'
+fi
+
 # krew
 if (( $+commands[kubectl-krew] )); then
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
