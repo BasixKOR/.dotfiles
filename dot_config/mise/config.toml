@@ -1,8 +1,8 @@
 [tools]
-node = '20'
+node = 'latest'
 gleam = 'latest'
-elixir = '1.14'
-erlang = '25' # https://hexdocs.pm/elixir/1.14.4/compatibility-and-deprecations.html
+elixir = '1.18.4'
+erlang = '28' # https://hexdocs.pm/elixir/1.18.4/compatibility-and-deprecations.html
 terraform = "latest"
 deno = "latest"
 "npm:prettier" = "latest"
@@ -37,3 +37,5 @@ python_compile = true
 
 # prefer uv-based installation for pipx based packages
 pipx.uvx = true
+
+idiomatic_version_file_enable_tools = ["node"]
