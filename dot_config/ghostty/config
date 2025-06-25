@@ -9,6 +9,9 @@ background-blur-radius = 20
 
 mouse-hide-while-typing = true
 
+copy-on-select = true
+clipboard-trim-trailing-spaces = true
+
 # Ghostty has a weird name for backtick.
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
