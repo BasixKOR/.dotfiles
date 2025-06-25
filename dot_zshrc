@@ -150,6 +150,7 @@ if (( $+commands[git-branchless] )); then
   alias g-='git prev'
   alias gmv='git move'
   alias gsy='git sync'
+  alias gswi="git sw -i"
 fi
 
 # krew
