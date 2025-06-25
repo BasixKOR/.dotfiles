@@ -3,6 +3,8 @@ justfile := justfile()
 
 import '~/.justfile'
 
+import 'macos.just'
+
 _list:
   #!/usr/bin/env bash
   if command -v fzf &>/dev/null; then
@@ -14,16 +16,6 @@ _list:
 [no-cd]
 yarn-extract:
   yarn set version from sources --branch @yarnpkg/cli/{{ shell("yarn -v") }} --no-minify
-
-# https://apple.stackexchange.com/a/466029/460194
-macos-enable-sudo-touchid:
-  sed "s/^#auth/auth/" /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
-
-kill-ios-simulator:
-  sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
-
-launchctl-update-path:
-  sudo launchctl config user path {{env("PATH")}}
 
 ip:
   curl https://ipinfo.io/ | yq -P -oy .
@@ -42,3 +34,7 @@ git-branch-purge:
 
 curl-measure *ARGS:
   curl -w @"{{ justfile_directory() }}/curl-format.txt" -o /dev/null {{ ARGS }} 
+
+[no-cd]
+todo:
+  rg '(TODO|FIXME)(\([^)]+\))?:'
