@@ -9,13 +9,11 @@ tap "basixkor/tap"
 tap "cloudflare/cloudflare"
 tap "facebook/fb"
 tap "getsentry/tools"
-tap "googlechrome/simplehttp2server", "https://github.com/GoogleChrome/simplehttp2server"
-tap "hashicorp/tap"
-tap "homebrew/bundle"
 tap "jkfran/killport"
 tap "microsoft/git"
 tap "neodgm/neodgm"
 tap "simnalamburt/x" # uniqs
+tap "sst/tap"
 tap "tidwall/jj"
 tap "vectordotdev/brew"
 tap "wader/tap"
@@ -39,6 +37,7 @@ brew "cocoapods"
 brew "croc"
 brew "curl"
 brew "cyme"
+brew "direnv"
 brew "dive"
 brew "docker"
 brew "docker-buildx"
@@ -66,7 +65,6 @@ brew "haskell-stack"
 brew "helm"
 brew "hwatch"
 brew "hyperfine"
-brew "imagemagick"
 brew "jj"
 brew "jq"
 brew "just"
@@ -95,7 +93,7 @@ brew "openssh"
 brew "pam-u2f"
 brew "pandoc"
 brew "patchutils"
-brew "qrencode"
+brew "pnpm"
 brew "repo"
 brew "ripgrep"
 brew "ripgrep-all"
@@ -126,23 +124,21 @@ brew "axodotdev/tap/cargo-dist"
 brew "cloudflare/cloudflare/cloudflared"
 brew "facebook/fb/idb-companion"
 brew "getsentry/tools/sentry-cli"
-brew "googlechrome/simplehttp2server/simplehttp2server"
 brew "hashicorp/tap/packer"
 brew "hashicorp/tap/vault"
 brew "jkfran/killport/killport"
 brew "simnalamburt/x/jaso"
 brew "simnalamburt/x/uniqs"
-brew "tidwall/jj/jj"
+brew "sst/tap/opencode"
 brew "vectordotdev/brew/vector"
 brew "wader/tap/fq"
 brew "withered-magic/brew/starpls"
 
 cask "1password"
 cask "1password-cli"
-cask "appcleaner"
 cask "bartender"
+cask "cleanshot"
 cask "clickhouse"
-cask "codeedit"
 cask "confluent-cli"
 cask "cool-retro-term"
 cask "cork"
@@ -156,7 +152,7 @@ cask "font-neodunggeunmo-code"
 cask "fork"
 cask "forklift"
 cask "git-credential-manager"
-cask "handbrake"
+cask "handbrake-app"
 cask "iina"
 cask "imageoptim"
 cask "iterm2"
@@ -164,7 +160,6 @@ cask "latest"
 cask "launchcontrol"
 cask "lens"
 cask "linearmouse"
-cask "little-snitch"
 cask "lookaway"
 cask "mac-mouse-fix"
 cask "microsoft-git"
@@ -184,7 +179,8 @@ cask "sloth"
 cask "spotify"
 cask "visual-studio-code"
 cask "wezterm"
-cask "xcodes"
+cask "xcodes-app"
+cask "zed"
 cask "zoom"
 
 mas "1Password for Safari", id: 1569813296
@@ -194,7 +190,6 @@ mas "Affinity Publisher 2", id: 1606941598
 mas "Amphetamine", id: 937984704
 mas "BBEdit", id: 404009241
 mas "Calcbot", id: 931657367
-mas "ColorSlurp", id: 1287239339
 mas "Craft", id: 1487937127
 mas "CrystalFetch", id: 6454431289
 mas "DaisyDisk", id: 411643860
@@ -207,10 +202,7 @@ mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
-mas "Okta Verify", id: 490179405
-mas "Pastebot", id: 1179623856
 mas "Pixelmator Pro", id: 1289583905
-mas "Pocket", id: 568494494
 mas "Pure Paste", id: 1611378436
 mas "Reeder", id: 1529448980
 mas "S3", id: 6447647340
