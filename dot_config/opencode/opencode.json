@@ -2,10 +2,13 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "catppuccin",
   "autoupdate": true,
+  "disabled_providers": [
+    "github-copilot"
+  ],
   "mcp": {
     "context7": {
       "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
+      "url": "https://mcp.context7.com/sse",
       "enabled": true
     }
   }
