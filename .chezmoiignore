@@ -1,23 +1,32 @@
+# zinit files
 .zinit/completions
 .zinit/plugins
 .zinit/polaris
 .zinit/services
 .zinit/snippets
 .zinit/zmodules/**
+
 README.md
+
 {{ if ne .chezmoi.os "windows" }}
 .config/git/git-prompt.sh
 AppData
 Scoopfile.json
 {{ end }}
+
 {{ if ne .chezmoi.os "darwin" }}
 Library
 .Brewfile
 .1password
+{{ if not lookPath "sccache" }}
+Library/LaunchAgents/sccache.plist
 {{ end }}
+{{ end }}
+
 {{ if ne .chezmoi.os "freebsd" }}
 .porttools
 {{ end }}
 
+# Scripts
 .chezmoiscripts/*/**
 !.chezmoiscripts/{{ .chezmoi.os }}/**
