@@ -142,15 +142,16 @@ if (( $+commands[lazygit] )); then
 fi
 
 if (( $+commands[git-branchless] )); then
-  alias gr='git record'
+  alias grd='git record'
   alias gsl='git smartlog'
   alias grw='git reword'
   alias gam='git amend'
-  alias g+='git next'
-  alias g-='git prev'
+  alias g+='git next -i'
+  alias g-='git prev -i'
   alias gmv='git move'
   alias gsy='git sync'
   alias gswi="git sw -i"
+  alias gu='git undo'
 fi
 
 # krew
@@ -193,6 +194,14 @@ if (( $+commands[mise] )); then
     eval "$(mise activate zsh)"
   fi
 fi
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
 
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 [[ -v ZPROF ]] && zprof
