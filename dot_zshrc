@@ -152,6 +152,7 @@ if (( $+commands[git-branchless] )); then
   alias gsy='git sync'
   alias gswi="git sw -i"
   alias gu='git undo'
+  alias gq='git query'
 fi
 
 # krew
