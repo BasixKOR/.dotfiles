@@ -238,6 +238,7 @@ return {
             },
           },
         },
+        ruby_lsp = {},
       }
 
       -- Ensure the servers and tools above are installed
