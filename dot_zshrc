@@ -189,8 +189,8 @@ if [[ -d "$HOME/.dotnet/tools" ]]; then
 fi
 
 if (( $+commands[mise] )); then
-  if [[ -v RTX_SHIM ]]; then
-    export PATH="$HOME/.local/share/mise/shims:$PATH"
+  if [[ -v MISE_SHIM ]]; then
+    eval "$(mise activate zsh --shims)"
   else
     eval "$(mise activate zsh)"
   fi
