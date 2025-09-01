@@ -10,6 +10,8 @@ Host *
     IgnoreUnknown SecurityKeyProvider
 {{- if eq .chezmoi.os "windows" }}
     SecurityKeyProvider winhello.dll
-{{- else }}
+{{- else if stat (joinPath .chezmoi.homeDir "Library/Containers/com.maxgoedjen.Secretive.SecretAgent") }}
+    IdentityAgent /Users/blake/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
+{{- else if stat (joinPath .chezmoi.homeDir ".1password") }}
     IdentityAgent ~/.1password/agent.sock
 {{- end }}
