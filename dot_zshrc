@@ -160,6 +160,11 @@ if (( $+commands[kubectl-krew] )); then
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
+# krew
+if (( $+commands[just] )); then
+  alias jg="just -g"
+fi
+
 # iTerm2 integrations
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
