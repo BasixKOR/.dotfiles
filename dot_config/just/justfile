@@ -38,9 +38,9 @@ curl-measure *ARGS:
 [no-cd]
 nr:
   #!/bin/bash
-  COMMAND="$(command -v ny || command -v dum || (echo "You should have krzkaczor/ny or egoist/dum installed!"; exit 1))"
-  SCRIPT="$(jq -cr '.scripts | keys_unsorted | .[]' package.json | gum choose)"
-  $COMAND "$SCRIPT"
+  COMMAND="$(command -v ny || command -v dum || echo "You should have krzkaczor/ny or egoist/dum installed!"; exit 1)"
+  SCRIPT="$(jq -cr '.scripts | keys_unsorted | .[]' package.json | gum filter)"
+  $COMMAND "$SCRIPT"
 
 [no-cd]
 todo:
