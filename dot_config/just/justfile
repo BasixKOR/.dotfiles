@@ -36,5 +36,12 @@ curl-measure *ARGS:
   curl -w @"{{ justfile_directory() }}/curl-format.txt" -o /dev/null {{ ARGS }} 
 
 [no-cd]
+nr:
+  #!/bin/bash
+  COMMAND="$(command -v ny || command -v dum || (echo "You should have krzkaczor/ny or egoist/dum installed!"; exit 1))"
+  SCRIPT="$(jq -cr '.scripts | keys_unsorted | .[]' package.json | gum choose)"
+  $COMAND "$SCRIPT"
+
+[no-cd]
 todo:
   rg '(TODO|FIXME)(\([^)]+\))?:'
