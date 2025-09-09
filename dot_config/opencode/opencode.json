@@ -10,6 +10,11 @@
       "type": "remote",
       "url": "https://mcp.context7.com/sse",
       "enabled": true
+    },
+    "apple": {
+      "type": "remote",
+      "url": "https://sosumi.ai/mcp",
+      "enabled": true
     }
   }
 }
