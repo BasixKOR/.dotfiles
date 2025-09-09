@@ -162,6 +162,7 @@ fi
 
 # krew
 if (( $+commands[just] )); then
+  alias j="just"
   alias jg="just -g"
 fi
 
