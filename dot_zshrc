@@ -154,6 +154,8 @@ if (( $+commands[git-branchless] )); then
   alias gswi="git sw -i"
   alias gu='git undo'
   alias gq='git query'
+  alias gsm='git submit'
+  alias gsmd="git submit 'draft()'"
 fi
 
 # krew
