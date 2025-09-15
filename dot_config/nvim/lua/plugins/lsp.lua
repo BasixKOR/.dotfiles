@@ -331,6 +331,7 @@ return {
         bash = { 'shfmt' },
         sql = { 'sqlfluff' },
         yaml = { 'prettier' },
+        json = { 'prettier' },
       },
     },
   },
