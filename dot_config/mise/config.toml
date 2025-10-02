@@ -2,29 +2,43 @@
 node = 'latest'
 gleam = 'latest'
 elixir = '1.18.4'
-erlang = '28' # https://hexdocs.pm/elixir/1.18.4/compatibility-and-deprecations.html
+erlang = '28'             # https://hexdocs.pm/elixir/1.18.4/compatibility-and-deprecations.html
 terraform = "latest"
 deno = "latest"
-"npm:prettier" = "latest"
 kubectl = "latest"
 usage = "0.3.0"
 python = ["3.12", "3.11"]
+
+# essential cli tools
+gum = 'latest'
+lsd = 'latest'
+bat = 'latest'
+atuin = 'latest'
+neovim = 'latest'
+lazygit = 'latest'
+just = 'latest'
+jq = 'latest'
+
+# uncommon
+aws = 'latest'
+gh = 'latest'
+
 
 [settings]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
 # for example, .nvmrc in the case of nodejs's nvm
 
 # configure `mise install` to always keep the downloaded archive
-always_keep_download = true        # deleted after install by default
+always_keep_download = true # deleted after install by default
 
 # configure how frequently (in minutes) to fetch updated plugin repository changes
 # this is updated whenever a new runtime is installed
 # (note: this isn't currently implemented but there are plans to add it: https://github.com/jdxcode/rtx/issues/128)
 plugin_autoupdate_last_check_duration = "7d" # (one week) set to 0 to disable updates
 
-verbose = false     # set to true to see full installation output, see `RTX_VERBOSE`
-jobs = 4            # number of plugins or runtimes to install in parallel. The default is `4`.
-raw = false         # set to true to directly pipe plugins to stdin/stdout/stderr
+verbose = false # set to true to see full installation output, see `RTX_VERBOSE`
+jobs = 4        # number of plugins or runtimes to install in parallel. The default is `4`.
+raw = false     # set to true to directly pipe plugins to stdin/stdout/stderr
 
 # shorthands_file = '~/.config/rtx/shorthands.toml' # path to the shorthands file, see `RTX_SHORTHANDS_FILE`
 disable_default_shorthands = false # disable the default shorthands, see `RTX_DISABLE_DEFAULT_SHORTHANDS`
