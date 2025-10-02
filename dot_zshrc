@@ -7,9 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Fig
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
-
 if [[ -d "~/.zinit/zmodules/Src" ]]; then
   module_path+=( "$HOME/.zinit/zmodules/Src" )
   zmodload zdharma/zplugin
@@ -215,6 +212,5 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
 [[ -v ZPROF ]] && zprof
 # vim: ft=zsh
