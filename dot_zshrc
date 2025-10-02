@@ -176,9 +176,6 @@ if (( $+commands[just] )); then
   alias jg="just -g"
 fi
 
-# iTerm2 integrations
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 # Bun completions
 [ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
 
