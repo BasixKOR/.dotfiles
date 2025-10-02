@@ -170,7 +170,7 @@ if (( $+commands[kubectl-krew] )); then
   export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 fi
 
-# krew
+# just
 if (( $+commands[just] )); then
   alias j="just"
   alias jg="just -g"
