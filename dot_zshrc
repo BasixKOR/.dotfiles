@@ -183,12 +183,6 @@ fi
 export BUN_INSTALL="~/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Volta
-if [[ -d "$HOME/.volta" ]]; then
-  export VOLTA_HOME="$HOME/.volta"
-  export PATH="$VOLTA_HOME/bin:$PATH"
-fi
-
 if [[ -f "$HOME/.cargo/env" ]]; then
   source "$HOME/.cargo/env"
 fi
