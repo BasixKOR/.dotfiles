@@ -18,7 +18,7 @@ Scoopfile.json
 Library
 .Brewfile
 .1password
-{{ if not lookPath "sccache" }}
+{{ if not (lookPath "sccache") }}
 Library/LaunchAgents/sccache.plist
 {{ end }}
 {{ end }}
