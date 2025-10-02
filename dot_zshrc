@@ -18,6 +18,16 @@ fi
 # PATH Configure
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
+# mise
+# place this closer to the top for tool detections
+if (( $+commands[mise] )); then
+  if [[ -v MISE_SHIM ]]; then
+    eval "$(mise activate zsh --shims)"
+  else
+    eval "$(mise activate zsh)"
+  fi
+fi
+
 # MacOS XDG_CONFIG_HOME override
 if [[ $(uname) == "Darwin" ]]; then
   export XDG_CONFIG_HOME="$HOME/.config"
@@ -195,14 +205,6 @@ fi
 
 if [[ -d "$HOME/.dotnet/tools" ]]; then
   export PATH="$HOME/.dotnet/tools:$PATH"
-fi
-
-if (( $+commands[mise] )); then
-  if [[ -v MISE_SHIM ]]; then
-    eval "$(mise activate zsh --shims)"
-  else
-    eval "$(mise activate zsh)"
-  fi
 fi
 
 # pnpm
