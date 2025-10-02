@@ -239,6 +239,7 @@ return {
           },
         },
         ruby_lsp = {},
+        taplo = {},
       }
 
       -- Ensure the servers and tools above are installed
