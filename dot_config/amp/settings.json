@@ -1,0 +1,41 @@
+{
+  "amp.mcpServers": {
+    "context7": {
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--enable-web-dashboard",
+        "False"
+      ]
+    },
+    "atlassian": {
+      "command": "pnpx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.atlassian.com/v1/sse"
+      ]
+    }
+  },
+  "amp.permissions": [
+    {
+      "tool": "Bash",
+      "matches": {
+        "cmd": "git commit*"
+      },
+      "action": "allow"
+    },
+    {
+      "tool": "Bash",
+      "matches": {
+        "cmd": "git add*"
+      },
+      "action": "allow"
+    }
+  ]
+}
