@@ -7,6 +7,7 @@
 .zinit/zmodules/**
 
 README.md
+AGENTS.md
 
 {{ if ne .chezmoi.os "windows" }}
 .config/git/git-prompt.sh
