@@ -47,4 +47,4 @@ todo:
   rg '(TODO|FIXME)(\([^)]+\))?:'
 
 amp *args:
-  amp --mcp-config "$(fd -g '*.json' .config/amp/mcps | fzf -m -d / --with-nth -1 --preview 'bat --color always --style plain -l json {}' | xargs jq -cs add)" {{args}}
+  amp --mcp-config "$(fd -g '*.json' ~/.config/amp/mcps | fzf -m -d / --with-nth -1 --preview 'bat --color always --style plain -l json {}' | xargs jq -cs add)" {{args}}
