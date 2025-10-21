@@ -8,7 +8,7 @@ This is a **chezmoi-managed dotfiles repository** for cross-platform configurati
 - **Platform-specific scripts** in `.chezmoiscripts/{darwin,linux,windows}/` for OS-specific setup
 
 ## Key Commands
-- **Apply changes**: NEVER run `chezmoi apply` (interactive, requires user input). Always remind user to run it manually after changes.
+- **Apply changes**: `chezmoi apply <target_path>...` for specific files (non-interactive). Can accept multiple paths. NEVER run `chezmoi apply` without arguments (interactive). Always specify target file paths when applying.
 - **Preview changes**: `chezmoi diff` (see what would change before applying)
 - **Test template**: `chezmoi execute-template <file>` or `chezmoi cat <target_path>`
 - **Add new file**: `chezmoi add ~/.config/newfile` (imports file into source directory)
