@@ -29,4 +29,13 @@ return {
       },
     },
   },
+  {
+    "sourcegraph/amp.nvim",
+    branch = "main",
+    lazy = false,
+    cond = function()
+      return vim.fn.executable('amp') == 1
+    end,
+    opts = { auto_start = true, log_level = "info" },
+  },
 }
