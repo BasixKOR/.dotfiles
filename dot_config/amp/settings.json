@@ -13,13 +13,6 @@
         "--enable-web-dashboard",
         "False"
       ]
-    },
-    "atlassian": {
-      "command": "pnpx",
-      "args": [
-        "mcp-remote",
-        "https://mcp.atlassian.com/v1/sse"
-      ]
     }
   },
   "amp.permissions": [

@@ -1,0 +1,8 @@
+{
+  "eslint": {
+    "command": "pnpx",
+    "args": [
+      "@eslint/mcp@latest"
+    ]
+  }
+}

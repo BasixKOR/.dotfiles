@@ -1,0 +1,9 @@
+{
+  "github": {
+    "command": "pnpx",
+    "args": [
+      "mcp-remote",
+      "https://api.githubcopilot.com/mcp/"
+    ]
+  }
+}
