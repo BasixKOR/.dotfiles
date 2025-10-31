@@ -6,7 +6,6 @@ erlang = '28'             # https://hexdocs.pm/elixir/1.18.4/compatibility-and-d
 terraform = "latest"
 deno = "latest"
 kubectl = "latest"
-usage = "0.3.0"
 python = ["3.12", "3.11"]
 
 # essential cli tools
@@ -22,7 +21,7 @@ jq = 'latest'
 # uncommon
 aws = 'latest'
 gh = 'latest'
-
+fnox = 'latest'
 
 [settings]
 # plugins can read the versions files used by other version managers (if enabled by the plugin)
