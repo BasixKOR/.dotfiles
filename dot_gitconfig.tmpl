@@ -21,6 +21,8 @@
 {{- else if eq .chezmoi.os "darwin" }}
 	helper = /usr/local/bin/git-credential-manager
 {{- end }}
+[credential "https://codeberg.org"]
+        provider = generic
 [init]
 	defaultBranch = main
 [filter "lfs"]
