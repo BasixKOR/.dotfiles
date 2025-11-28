@@ -140,12 +140,12 @@ brew "withered-magic/brew/starpls"
 
 cask "1password"
 cask "1password-cli"
+cask "affinity"
+cask "base"
 cask "betterzip"
-cask "cleanshot"
 cask "clickhouse"
-cask "confluent-cli"
-cask "cool-retro-term"
 cask "cork"
+cask "daisydisk"
 cask "discord"
 cask "element"
 cask "firefox"
@@ -197,16 +197,9 @@ cask "xcodes-app"
 cask "zed"
 cask "zoom"
 
-mas "1Password for Safari", id: 1569813296
-mas "Affinity Designer 2", id: 1616831348
-mas "Affinity Photo 2", id: 1616822987
-mas "Affinity Publisher 2", id: 1606941598
 mas "Amphetamine", id: 937984704
 mas "BBEdit", id: 404009241
-mas "Calcbot", id: 931657367
-mas "Craft", id: 1487937127
 mas "CrystalFetch", id: 6454431289
-mas "DaisyDisk", id: 411643860
 mas "Darkroom", id: 953286746
 mas "Dato", id: 1470584107
 mas "Dropover", id: 1355679052
@@ -217,7 +210,6 @@ mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
 mas "Microsoft Word", id: 462054704
 mas "Pixelmator Pro", id: 1289583905
-mas "Pure Paste", id: 1611378436
 mas "Reeder", id: 1529448980
 mas "S3", id: 6447647340
 mas "Shazam", id: 897118787
