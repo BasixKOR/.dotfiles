@@ -19,6 +19,6 @@ launchctl-update-path:
 confetti:
   open raycast://confetti
 
-[macos]:
+[macos]
 brew-diff:
   delta <(brew bundle dump --file=-) ~/.Brewfile
