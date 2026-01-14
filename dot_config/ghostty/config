@@ -18,3 +18,4 @@ keybind = global:cmd+grave_accent=toggle_quick_terminal
 
 # Local
 config-file = "config-local"
+keybind = shift+enter=text:\x1b\r
