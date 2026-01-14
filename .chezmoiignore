@@ -31,3 +31,6 @@ Library/LaunchAgents/sccache.plist
 # Scripts
 .chezmoiscripts/*/**
 !.chezmoiscripts/{{ .chezmoi.os }}/**
+
+# Copyright notices
+**/COPYING
