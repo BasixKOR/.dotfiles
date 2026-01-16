@@ -146,9 +146,12 @@
     "github-copilot"
   ],
   "mcp": {
-    "context7": {
+    "nia": {
       "type": "remote",
-      "url": "https://mcp.context7.com/mcp",
+      "url": "https://apigcp.trynia.ai/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:NIA_API_KEY}"
+      },
       "enabled": true
     },
     "apple": {
