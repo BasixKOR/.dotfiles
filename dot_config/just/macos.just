@@ -22,3 +22,18 @@ confetti:
 [macos]
 brew-diff:
   delta <(brew bundle dump --file=-) ~/.Brewfile
+
+[macos]
+dequarantine app="":
+    #!/usr/bin/env zsh
+    set -euo pipefail
+    if [ -z "{{ app }}" ]; then
+      APP=$(fd -d 1 -g "*.app" /Applications | fzf --prompt="Select app to dequarantine: " --preview='basename {}')
+      if [ -z "$APP" ]; then
+        echo "No app selected"
+        exit 1
+      fi
+      sudo xattr -rd com.apple.quarantine "$APP"
+    else
+      sudo xattr -rd com.apple.quarantine "{{ app }}.app"
+    fi
