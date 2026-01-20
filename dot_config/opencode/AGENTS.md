@@ -1,3 +1,9 @@
 ## Library Usage
-You must use Context7 tools to confirm your usage of the API, or CLI is valid and supported before proceeding if the tool is available.
-In case the tool is not available, you must stop the task and ask the user to configure the Context7 MCP server.
+
+- You must use Nia tools to confirm your usage of the API, or CLI is valid and supported before proceeding if the tool is available.
+- Prefer fd over find, and rg (ripgrep) over grep.
+- NEVER Write a one-off Python 3 script unless you have explictly told to do so.
+
+## Git
+
+- You MAY use `git smartlog` to learn the current state of the repository.
