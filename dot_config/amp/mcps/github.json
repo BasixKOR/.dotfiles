@@ -1,9 +1,5 @@
 {
   "github": {
-    "command": "pnpx",
-    "args": [
-      "mcp-remote",
-      "https://api.githubcopilot.com/mcp/"
-    ]
+    "url": "https://api.githubcopilot.com/mcp/"
   }
 }

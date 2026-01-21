@@ -1,9 +1,5 @@
 {
   "atlassian": {
-    "command": "pnpx",
-    "args": [
-      "mcp-remote",
-      "https://mcp.atlassian.com/v1/sse"
-    ]
+    "url": "https://mcp.atlassian.com/v1/sse"
   }
 }
