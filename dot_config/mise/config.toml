@@ -39,14 +39,11 @@ verbose = false # set to true to see full installation output, see `RTX_VERBOSE`
 jobs = 4        # number of plugins or runtimes to install in parallel. The default is `4`.
 raw = false     # set to true to directly pipe plugins to stdin/stdout/stderr
 
-# shorthands_file = '~/.config/rtx/shorthands.toml' # path to the shorthands file, see `RTX_SHORTHANDS_FILE`
-disable_default_shorthands = false # disable the default shorthands, see `RTX_DISABLE_DEFAULT_SHORTHANDS`
-
 # Tasks and other experimentals
 experimental = true
 
 # python-build
-python_compile = true
+python.compile = true
 
 # prefer uv-based installation for pipx based packages
 pipx.uvx = true
