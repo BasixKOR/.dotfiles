@@ -3,6 +3,7 @@ require "base64"
 cork = Base64.decode64("ZW5pZ21hdGljZGIvc3VwZXItc2VjcmV0LXRhcA")
 
 tap "1password/tap"
+tap "anomalyco/tap"
 tap "agrinman/tap"
 tap "axodotdev/tap"
 tap "basixkor/tap"
@@ -13,11 +14,8 @@ tap "jkfran/killport"
 tap "microsoft/git"
 tap "neodgm/neodgm"
 tap "simnalamburt/x" # uniqs
-tap "sst/tap"
 tap "tidwall/jj"
 tap "vectordotdev/brew"
-tap "wader/tap"
-tap "withered-magic/brew"
 tap cork
 
 brew "age"
@@ -33,7 +31,6 @@ brew "chezmoi"
 brew "clipboard"
 brew "cloc"
 brew "cmake"
-brew "codex"
 brew "croc"
 brew "curl"
 brew "cyme"
@@ -54,7 +51,6 @@ brew "git-absorb"
 brew "git-annex"
 brew "git-branchless"
 brew "git-delta"
-brew "git-flow-avh"
 brew "git-lfs"
 brew "git-trim"
 brew "gnutls"
@@ -87,7 +83,6 @@ brew "ncdu"
 brew "neovim"
 brew "ninja"
 brew "noti"
-brew "nu"
 brew "openjdk@11"
 brew "openjdk@17"
 brew "openssh"
@@ -125,6 +120,7 @@ brew "yq"
 brew "yt-dlp"
 brew "zellij"
 
+brew "anomalyco/tap/opencode"
 brew "axodotdev/tap/cargo-dist"
 brew "dr-emann/tap/applesauce"
 brew "getsentry/tools/sentry-cli"
@@ -133,10 +129,7 @@ brew "hashicorp/tap/vault"
 brew "jkfran/killport/killport"
 brew "simnalamburt/x/jaso"
 brew "simnalamburt/x/uniqs"
-brew "sst/tap/opencode"
 brew "vectordotdev/brew/vector"
-brew "wader/tap/fq"
-brew "withered-magic/brew/starpls"
 
 cask "1password"
 cask "1password-cli"
@@ -144,6 +137,7 @@ cask "affinity"
 cask "base"
 cask "betterzip"
 cask "clickhouse"
+cask "codex"
 cask "cork"
 cask "daisydisk"
 cask "discord"
@@ -183,12 +177,14 @@ cask "rectangle"
 cask "safari-technology-preview"
 cask "secretive"
 cask "shottr"
+cask "slack"
 cask "sloth"
 cask "spotify"
 cask "syncthing-app"
 cask "synology-drive"
 cask "syntax-highlight"
 cask "tailscale-app"
+cask "telegram"
 cask "ungoogled-chromium"
 cask "utm"
 cask "visual-studio-code"
@@ -204,16 +200,9 @@ mas "Darkroom", id: 953286746
 mas "Dato", id: 1470584107
 mas "Dropover", id: 1355679052
 mas "Infuse", id: 1136220934
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft OneNote", id: 784801555
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Word", id: 462054704
 mas "Pixelmator Pro", id: 1289583905
 mas "Reeder", id: 1529448980
 mas "S3", id: 6447647340
 mas "Shazam", id: 897118787
-mas "Slack", id: 803453959
 mas "Sleeve", id: 1606145041
-mas "Telegram", id: 747648890
 mas "Velja", id: 1607635845
