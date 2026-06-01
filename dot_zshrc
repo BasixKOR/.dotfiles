@@ -205,7 +205,7 @@ esac
 # pnpm end
 
 # Yarn Switch
-if [[ -d "$HOME/.yarn/switch"]]; then
+if [[ -d "$HOME/.yarn/switch" ]]; then
   source "$HOME/.yarn/switch/env"
 fi
 
