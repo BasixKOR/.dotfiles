@@ -48,4 +48,4 @@ python.compile = true
 # prefer uv-based installation for pipx based packages
 pipx.uvx = true
 
-idiomatic_version_file_enable_tools = ["node"]
+idiomatic_version_file_enable_tools = ["node", "ruby"]
