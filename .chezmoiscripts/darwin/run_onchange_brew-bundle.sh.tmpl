@@ -2,9 +2,14 @@
 
 # Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
 
-if command -v brew; then
+BREW_PATH="/opt/homebrew/bin/brew"
+[ "$(uname -m)" = "x86_64" ] && BREW_PATH="/usr/local/bin/brew"
+
+if [ -x "$BREW_PATH" ]; then
+	"$BREW_PATH" bundle --global -q || true
+elif command -v brew; then
 	brew bundle --global -q || true
 else
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	/bin/bash -c "brew bundle --global || true"
+	eval "$(/usr/bin/which brew)" bundle --global || true
 fi
