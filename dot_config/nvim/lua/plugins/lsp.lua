@@ -152,7 +152,7 @@ return {
       local util = require 'lspconfig.util'
 
       local root_path = vim.fs.dirname(vim.fs.find('.git', { path = vim.fn.getcwd(), upward = true })[1])
-      local is_yarn_pnp = (vim.uv.fs_stat(table.concat { root_path, '.pnp.cjs' }) or {}).type == 'file'
+      local is_yarn_pnp = root_path ~= nil and (vim.uv.fs_stat(vim.fs.joinpath(root_path, '.pnp.cjs')) or {}).type == 'file'
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
