@@ -33,7 +33,7 @@
     refreshPeriod = "168h"
 
 {{ if eq .chezmoi.os "linux" }}
-[".local/share/fonts/neogdm.tff"]
+[".local/share/fonts/neodgm.ttf"]
     type = "file"
     url = "https://github.com/neodgm/neodgm/releases/latest/download/neodgm.ttf"
     refreshPeriod = "168h"
