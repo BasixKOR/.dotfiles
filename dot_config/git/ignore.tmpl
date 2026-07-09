@@ -1,0 +1,12 @@
+# Managed by chezmoi — edit dot_config/git/ignore.tmpl in the source repo.
+# Machine-local entries go in ~/.gitexclude (not tracked by chezmoi);
+# run `chezmoi apply ~/.config/git/ignore` after editing it.
+mise.local.toml
+**/.claude/settings.local.json
+attic/
+{{- $local := joinPath .chezmoi.homeDir ".gitexclude" }}
+{{- if stat $local }}
+
+# --- local overrides (~/.gitexclude) ---
+{{ include $local -}}
+{{- end }}
