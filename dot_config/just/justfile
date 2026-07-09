@@ -3,6 +3,7 @@ justfile := justfile()
 
 import '~/.justfile'
 
+[macos]
 import 'macos.just'
 
 _list:
