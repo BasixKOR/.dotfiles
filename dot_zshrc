@@ -121,6 +121,10 @@ alias p='pnpm'
 alias m='mise'
 alias pick='pushd $(fd -td | fzf)'
 
+if (( $+commands[brew] )); then
+  alias bi='brew install'
+fi
+
 # Chezmoi completions
 if (( $+commands[chezmoi] )); then
   source <(chezmoi completion zsh)
