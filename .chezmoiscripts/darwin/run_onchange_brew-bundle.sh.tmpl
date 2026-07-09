@@ -7,9 +7,9 @@ BREW_PATH="/opt/homebrew/bin/brew"
 
 if [ -x "$BREW_PATH" ]; then
 	"$BREW_PATH" bundle --global -q || true
-elif command -v brew; then
+elif command -v brew >/dev/null; then
 	brew bundle --global -q || true
 else
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	eval "$(/usr/bin/which brew)" bundle --global || true
+	"$BREW_PATH" bundle --global || true
 fi
