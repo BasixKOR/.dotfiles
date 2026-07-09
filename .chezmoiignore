@@ -19,9 +19,10 @@ Scoopfile.json
 Library
 .Brewfile
 .1password
+{{ end }}
+
 {{ if not (lookPath "sccache") }}
 Library/LaunchAgents/sccache.plist
-{{ end }}
 {{ end }}
 
 {{ if ne .chezmoi.os "freebsd" }}
