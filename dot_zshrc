@@ -7,7 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ -d "~/.zinit/zmodules/Src" ]]; then
+if [[ -d "$HOME/.zinit/zmodules/Src" ]]; then
   module_path+=( "$HOME/.zinit/zmodules/Src" )
   zmodload zdharma/zplugin
 fi
@@ -59,7 +59,10 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 if (( $+commands[atuin] )); then
   zinit light atuinsh/atuin
 else
-  (( $+commands[fzf] )) && zinit ice lucid wait; zinit light joshskidmore/zsh-fzf-history-search
+  if (( $+commands[fzf] )); then
+    zinit ice lucid wait
+    zinit light joshskidmore/zsh-fzf-history-search
+  fi
   zinit ice depth=1 wait lucid; zinit light zsh-users/zsh-history-substring-search
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
@@ -70,7 +73,10 @@ zinit ice lucid wait; zinit light simnalamburt/cgitc
 zinit ice lucid pick"z.sh"; zinit light rupa/z
 if (( $+commands[fzf] )); then
   zinit ice lucid wait pick"fz.sh"; zinit light changyuheng/fz
-  [ -s ~/.fig/fig.sh ] || zinit ice lucid wait; zinit light Aloxaf/fzf-tab
+  if [ ! -s ~/.fig/fig.sh ]; then
+    zinit ice lucid wait
+  fi
+  zinit light Aloxaf/fzf-tab
 fi
 
 # history-substring-search
@@ -182,10 +188,10 @@ if (( $+commands[just] )); then
 fi
 
 # Bun completions
-[ -s "~/.bun/_bun" ] && source "~/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # Bun
-export BUN_INSTALL="~/.bun"
+export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 if [[ -f "$HOME/.cargo/env" ]]; then
