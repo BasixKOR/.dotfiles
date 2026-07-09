@@ -149,8 +149,6 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities(capabilities))
 
-      local util = require 'lspconfig.util'
-
       local root_path = vim.fs.dirname(vim.fs.find('.git', { path = vim.fn.getcwd(), upward = true })[1])
       local is_yarn_pnp = root_path ~= nil and (vim.uv.fs_stat(vim.fs.joinpath(root_path, '.pnp.cjs')) or {}).type == 'file'
       -- Enable the following language servers
@@ -170,17 +168,19 @@ return {
         -- html = { filetypes = { 'html', 'twig', 'hbs'} },
         eslint = {
           settings = {
-            nodePath = is_yarn_pnp and util.path.join(root_path, '.yarn/sdks') or '',
+            nodePath = is_yarn_pnp and vim.fs.joinpath(root_path, '.yarn/sdks') or '',
           },
         },
         bashls = {},
 
         lua_ls = {
-          Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-            -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
+          settings = {
+            Lua = {
+              workspace = { checkThirdParty = false },
+              telemetry = { enable = false },
+              -- NOTE: toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              -- diagnostics = { disable = { 'missing-fields' } },
+            },
           },
         },
 
@@ -214,12 +214,17 @@ return {
         ansiblels = {},
         terraformls = {},
         jsonls = {
-          schemas = require('schemastore').json.schemas(),
-          validate = { enable = true },
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
         },
         denols = {
-          single_file_support = false,
-          root_dir = require('lspconfig.util').root_pattern('deno.json', 'deno.jsonc'),
+          -- Only attach inside projects with a deno config file
+          workspace_required = true,
+          root_markers = { 'deno.json', 'deno.jsonc' },
         },
         ruff = {},
         basedpyright = {},
@@ -261,18 +266,15 @@ return {
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-      require('mason-lspconfig').setup {
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
-      }
+      -- Broadcast the extra capabilities to every server; per-server
+      -- configs below are merged on top (see :help lspconfig-nvim-0.11)
+      vim.lsp.config('*', { capabilities = capabilities })
+      for server_name, config in pairs(servers) do
+        vim.lsp.config(server_name, config)
+      end
+
+      -- mason-lspconfig v2 runs vim.lsp.enable() for every installed server
+      require('mason-lspconfig').setup()
     end,
   },
   { -- Autoformat
@@ -351,6 +353,11 @@ return {
       'neovim/nvim-lspconfig', -- optional
     },
     opts = {
+      -- Don't let tailwind-tools set up tailwindcss through the deprecated
+      -- lspconfig framework; vim.lsp.config above handles it
+      server = {
+        override = false,
+      },
       document_color = {
         enabled = false,
       },
