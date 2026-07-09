@@ -1,5 +1,5 @@
-# https://www.chezmoi.io/user-guide/machines/containers-and-vms/
 #!/bin/sh
+# https://www.chezmoi.io/user-guide/machines/containers-and-vms/
 
 set -e # -e: exit on error
 
