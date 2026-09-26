@@ -1,0 +1,16 @@
+{
+  "lastChangelogVersion": "0.87.1",
+  "theme": "dark/dark",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-5-5",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "git:github.com/paoloanzn/pi-black",
+    "npm:pi-verdict",
+    "npm:@aliou/pi-synthetic"
+  ],
+  "warnings": {
+    "anthropicExtraUsage": false
+  }
+}
