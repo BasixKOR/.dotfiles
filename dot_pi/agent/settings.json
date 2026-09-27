@@ -8,7 +8,17 @@
     "npm:pi-mcp-adapter",
     "git:github.com/paoloanzn/pi-black",
     "npm:pi-verdict",
-    "npm:@aliou/pi-synthetic"
+    {
+      "source": "npm:@aliou/pi-synthetic",
+      "extensions": [
+        "-extensions/command-quotas/index.ts",
+        "-extensions/quota-warnings/index.ts",
+        "-extensions/web-search/index.ts",
+        "-extensions/usage-status/index.ts",
+        "-extensions/sub-bar-integration/index.ts"
+      ]
+    },
+    "npm:@tintinweb/pi-subagents"
   ],
   "warnings": {
     "anthropicExtraUsage": false
