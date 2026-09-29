@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# Orb setup: install the tools needed to render and lint this chezmoi source repo.
+# Never applies dotfiles to the orb's $HOME.
+set -euo pipefail
+
+CHEZMOI_VERSION=2.73.0
+STYLUA_VERSION=2.5.2
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+bin_dir="$HOME/.local/bin"
+mkdir -p "$bin_dir"
+
+step() {
+  local name=$1
+  shift
+  local start=$SECONDS
+  echo "==> $name"
+  "$@"
+  echo "<== $name ($((SECONDS - start))s)"
+}
+
+apt_packages() {
+  local missing=()
+  for pkg in zsh shfmt shellcheck; do
+    dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q 'install ok installed' || missing+=("$pkg")
+  done
+  if ((${#missing[@]})); then
+    sudo apt-get update -qq
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq "${missing[@]}"
+  else
+    echo "apt packages already installed"
+  fi
+}
+
+install_chezmoi() {
+  if "$bin_dir/chezmoi" --version 2>/dev/null | grep -q "v$CHEZMOI_VERSION,"; then
+    echo "chezmoi $CHEZMOI_VERSION already installed"
+    return
+  fi
+  sh -c "$(curl -fsSL https://get.chezmoi.io)" -- -b "$bin_dir" -t "v$CHEZMOI_VERSION"
+}
+
+install_stylua() {
+  if "$bin_dir/stylua" --version 2>/dev/null | grep -qx "stylua $STYLUA_VERSION"; then
+    echo "stylua $STYLUA_VERSION already installed"
+    return
+  fi
+  local tmp
+  tmp="$(mktemp -d)"
+  curl -fsSL -o "$tmp/stylua.zip" \
+    "https://github.com/JohnnyMorganz/StyLua/releases/download/v$STYLUA_VERSION/stylua-linux-x86_64.zip"
+  unzip -oq "$tmp/stylua.zip" -d "$tmp"
+  install -m 755 "$tmp/stylua" "$bin_dir/stylua"
+  rm -rf "$tmp"
+}
+
+# Point chezmoi's default source dir at this checkout so `chezmoi cat ~/.zshrc` etc. render from it.
+link_source_dir() {
+  local src="$HOME/.local/share/chezmoi"
+  mkdir -p "$(dirname "$src")"
+  if [[ -L "$src" || ! -e "$src" ]]; then
+    ln -sfn "$repo_root" "$src"
+  else
+    echo "warning: $src exists and is not a symlink; leaving it alone" >&2
+  fi
+}
+
+step "apt packages" apt_packages
+step "chezmoi" install_chezmoi
+step "stylua" install_stylua
+step "chezmoi source dir" link_source_dir
