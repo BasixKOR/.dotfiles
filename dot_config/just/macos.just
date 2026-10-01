@@ -15,7 +15,8 @@ confetti:
   open raycast://confetti
 
 brew-diff:
-  delta <(brew bundle dump --file=-) ~/.Brewfile
+  #!/bin/bash
+  delta <(brew bundle dump --no-describe --file=-) ~/.Brewfile
 
 dequarantine app="":
     #!/usr/bin/env zsh
