@@ -1,6 +1,6 @@
 import type { ExtensionAPI, ExtensionContext } from "@earendil-works/pi-coding-agent";
 
-const VIM_EXIT = /^:(?:w?q|x)a?!?$/;
+const EXIT_INPUT = /^(?::(?:w?q|x)a?!?|exit)$/;
 
 function exit(ctx: ExtensionContext) {
   // Stop any in-flight agent turn so shutdown isn't deferred.
@@ -15,7 +15,7 @@ export default function (pi: ExtensionAPI) {
   });
 
   pi.on("input", async (event, ctx) => {
-    if (event.source === "extension" || !VIM_EXIT.test(event.text.trim())) {
+    if (event.source === "extension" || !EXIT_INPUT.test(event.text.trim())) {
       return { action: "continue" };
     }
     exit(ctx);
