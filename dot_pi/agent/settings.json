@@ -1,11 +1,10 @@
 {
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.1",
   "theme": "dark/dark",
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",
   "packages": [
-    "npm:pi-mcp-adapter",
     "git:github.com/paoloanzn/pi-black",
     "npm:pi-verdict",
     {
@@ -18,7 +17,13 @@
         "-extensions/sub-bar-integration/index.ts"
       ]
     },
-    "npm:@tintinweb/pi-subagents"
+    "npm:@tintinweb/pi-subagents",
+    "npm:pi-web-access",
+    "npm:pi-antigravity",
+    "npm:@narumitw/pi-btw"
+  ],
+  "skills": [
+    "!skills/synced/**"
   ],
   "warnings": {
     "anthropicExtraUsage": false
