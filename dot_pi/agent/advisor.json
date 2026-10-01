@@ -1,0 +1,11 @@
+{
+  "advisorModelWhitelist": [
+    "anthropic/claude-fable-5-1",
+    "openai/gpt-6-astra"
+  ],
+  "advisorOutcomeLogging": false,
+  "advisorJevFilterEnabled": true,
+  "advisor": "anthropic/claude-fable-5-1",
+  "executor": "anthropic/claude-opus-5-5",
+  "executorEffort": "high"
+}

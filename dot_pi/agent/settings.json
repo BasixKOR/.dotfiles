@@ -20,7 +20,8 @@
     "npm:@tintinweb/pi-subagents",
     "npm:pi-web-access",
     "npm:pi-antigravity",
-    "npm:@narumitw/pi-btw"
+    "npm:@narumitw/pi-btw",
+    "npm:pi-advisor-flow"
   ],
   "skills": [
     "!skills/synced/**"
