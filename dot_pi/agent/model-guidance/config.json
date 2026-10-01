@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "models": [
+        "openai-codex/gpt-6.1-sol",
+        "openai/gpt-6.1-sol",
+        "openai-codex/gpt-6-sol",
+        "openai/gpt-6-sol",
+        "openai-codex/gpt-6-luna",
+        "openai/gpt-6-luna",
+        "openai-codex/gpt-5.6-sol",
+        "openai/gpt-5.6-sol",
+        "openai-codex/gpt-5.6-terra",
+        "openai/gpt-5.6-terra",
+        "openai-codex/gpt-5.6-luna",
+        "openai/gpt-5.6-luna"
+      ],
+      "files": ["sol.md"]
+    },
+    {
+      "models": ["openai-codex/gpt-6-astra", "openai/gpt-6-astra"],
+      "files": ["astra.md"]
+    },
+    {
+      "models": ["anthropic/claude-opus-5"],
+      "files": ["claude-opus-5.md"]
+    },
+    {
+      "models": ["anthropic/claude-opus-5-5"],
+      "files": ["claude-opus-5-5.md"]
+    },
+    {
+      "models": ["anthropic/claude-fable-5-1"],
+      "files": ["claude-fable-5-1.md"]
+    }
+  ]
+}

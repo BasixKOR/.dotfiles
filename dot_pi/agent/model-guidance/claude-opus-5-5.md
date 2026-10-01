@@ -1,0 +1,1 @@
+Opus 5.5: a progress update is not completion. Take the next step you announce instead of ending on it; stop only when every requested part is done or a blocker needs the user. Reserve xhigh and max subagent effort for measured gains.
