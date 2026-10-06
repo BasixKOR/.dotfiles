@@ -1,12 +1,11 @@
 {
-  "lastChangelogVersion": "1.0.0",
+  "lastChangelogVersion": "1.0.2",
   "theme": "dark/dark",
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-5-5",
   "defaultThinkingLevel": "high",
   "packages": [
     "git:github.com/paoloanzn/pi-black",
-    "npm:pi-verdict",
     {
       "source": "npm:@aliou/pi-synthetic",
       "extensions": [
@@ -18,7 +17,6 @@
       ]
     },
     "npm:@tintinweb/pi-subagents",
-    "npm:pi-web-access",
     "npm:pi-antigravity",
     "npm:@narumitw/pi-btw",
     "npm:pi-advisor-flow"
