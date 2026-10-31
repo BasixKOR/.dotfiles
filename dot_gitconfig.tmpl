@@ -18,10 +18,23 @@
 {{- if eq .chezmoi.os "windows" }}
 	helper = manager-core
 {{- else if eq .chezmoi.os "darwin" }}
-	helper = /usr/local/bin/git-credential-manager
+	helper = /usr/local/share/gcm-core/git-credential-manager
 {{- end }}
 [credential "https://codeberg.org"]
         provider = generic
+[credential "https://ampcode.com"]
+	provider = generic
+[credential "https://ampcode.com/"]
+	helper = 
+	helper = !amp git-credential-helper
+[credential "https://origin.cursor.com/git"]
+	helper = 
+	helper = !origin credential-helper
+[credential "https://origin.cursor.com"]
+	helper = 
+	helper = !origin credential-helper
+[credential "https://dev.azure.com"]
+	useHttpPath = true
 [init]
 	defaultBranch = main
 [filter "lfs"]
