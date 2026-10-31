@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.0.2",
+  "lastChangelogVersion": "1.2.0",
   "theme": "dark/dark",
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-5-5",
@@ -9,15 +9,20 @@
     {
       "source": "npm:@aliou/pi-synthetic",
       "extensions": [
-        "-extensions/command-quotas/index.ts",
         "-extensions/quota-warnings/index.ts",
         "-extensions/web-search/index.ts",
         "-extensions/usage-status/index.ts",
-        "-extensions/sub-bar-integration/index.ts"
+        "-extensions/sub-bar-integration/index.ts",
+        "-extensions/command-quotas/index.ts"
       ]
     },
     "npm:@tintinweb/pi-subagents",
-    "npm:pi-antigravity",
+    {
+      "source": "npm:pi-antigravity",
+      "extensions": [
+        "-src/features/google-search.ts"
+      ]
+    },
     "npm:@narumitw/pi-btw",
     "npm:pi-advisor-flow"
   ],
