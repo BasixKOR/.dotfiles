@@ -120,8 +120,10 @@ else
   alias l='ls -alh'
   alias ll='ls -lh'
 fi
-alias mv='mv -i'
-alias cp='cp -i'
+if [[ -o interactive && -z $CLAUDECODE ]]; then
+  alias mv='mv -i'
+  alias cp='cp -i'
+fi
 alias y='yarn'
 alias p='pnpm'
 alias m='mise'
