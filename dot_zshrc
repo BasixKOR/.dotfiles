@@ -125,7 +125,7 @@ else
   alias l='ls -alh'
   alias ll='ls -lh'
 fi
-if [[ -o interactive && -z $CLAUDECODE ]]; then
+if [[ -o interactive ]]; then
   alias mv='mv -i'
   alias cp='cp -i'
 fi
