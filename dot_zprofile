@@ -1,0 +1,7 @@
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# path_helper in /etc/zprofile moves Homebrew ahead of the mise shims set in ~/.zshenv
+path=("$HOME/.local/share/mise/shims" ${path:#$HOME/.local/share/mise/shims})

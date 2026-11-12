@@ -1,0 +1,2 @@
+# mise shims first in every zsh, including non-interactive `zsh -c` and scripts
+path=("$HOME/.local/share/mise/shims" ${path:#$HOME/.local/share/mise/shims})

@@ -15,10 +15,21 @@ fi
 # PATH Configure
 export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 
+# Brew Shellenv
+# must run before mise so Homebrew never shadows mise-managed tools
+if [[ -d /opt/homebrew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  fpath+="/opt/homebrew/share/zsh/site-functions"
+fi
+
 # mise
 # place this closer to the top for tool detections
+# shims for agent and non-interactive shells: hook-env would freeze the startup directory's versions
+if [[ -v MISE_SHIM || -v CLAUDECODE || ! -o interactive ]]; then
+  _mise_shim_mode=1
+fi
 if (( $+commands[mise] )); then
-  if [[ -v MISE_SHIM ]]; then
+  if (( ${_mise_shim_mode:-0} )); then
     eval "$(mise activate zsh --shims)"
   else
     eval "$(mise activate zsh)"
@@ -39,12 +50,6 @@ bindkey -v
 # End of lines configured by zsh-newuser-install
 
 source ~/.zinit/zinit.zsh
-
-# Brew Shellenv
-if [[ -d /opt/homebrew ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-  fpath+="/opt/homebrew/share/zsh/site-functions"
-fi
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
@@ -220,6 +225,12 @@ esac
 if [[ -d "$HOME/.yarn/switch" ]]; then
   source "$HOME/.yarn/switch/env"
 fi
+
+# keep mise shims ahead of the PATH prepends above in shim mode
+if (( ${_mise_shim_mode:-0} )); then
+  path=("$HOME/.local/share/mise/shims" ${path:#$HOME/.local/share/mise/shims})
+fi
+unset _mise_shim_mode
 
 [[ -v ZPROF ]] && zprof
 # vim: ft=zsh
