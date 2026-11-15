@@ -1,3 +1,8 @@
+{{ if stat (joinPath .chezmoi.homeDir ".namespace/ssh") -}}
+# Added by `devbox configure-ssh`
+Include ~/.namespace/ssh/*.ssh
+
+{{ end -}}
 {{ if stat (joinPath .chezmoi.homeDir ".orbstack") -}}
 Include ~/.orbstack/ssh/config
 {{- end }}
