@@ -3,6 +3,7 @@
 # run `chezmoi apply ~/.config/git/ignore` after editing it.
 mise.local.toml
 **/.claude/settings.local.json
+**/.claude/.cc-writes/
 attic/
 {{- $local := joinPath .chezmoi.homeDir ".gitexclude" }}
 {{- if stat $local }}
