@@ -35,3 +35,6 @@ Library/LaunchAgents/sccache.plist
 
 # Copyright notices
 LICENSES/*
+
+# dotagents project config for this repo (not a home file)
+agents.toml
