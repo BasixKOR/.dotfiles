@@ -1,0 +1,30 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /*
+  Codex (CLI and desktop app) rewrites ~/.codex/config.toml with machine-local
+  state: project trust, plugins, hooks.state hashes, desktop theme, tokens.
+  Only the keys below are managed; everything else is left as Codex wrote it.
+  If the managed keys already match, the file is passed through byte-for-byte.
+*/ -}}
+{{- $cfg := dict -}}
+{{- if .chezmoi.stdin -}}
+{{-   $cfg = fromToml .chezmoi.stdin -}}
+{{- end -}}
+{{- $before := toJson $cfg -}}
+
+{{- $cfg = setValueAtPath "model" "gpt-6.1-sol" $cfg -}}
+{{- $cfg = setValueAtPath "model_reasoning_effort" "medium" $cfg -}}
+{{- $cfg = setValueAtPath "personality" "pragmatic" $cfg -}}
+{{- $cfg = setValueAtPath "sandbox_workspace_write.network_access" true $cfg -}}
+{{- $cfg = setValueAtPath "mcp_servers.atlassian.url" "https://mcp.atlassian.com/v1/mcp/authv2" $cfg -}}
+{{- if stat "/Applications/yab.app/Contents/MacOS/yab" -}}
+{{-   $cfg = setValueAtPath "mcp_servers.yab-browser.command" "/Applications/yab.app/Contents/MacOS/yab" $cfg -}}
+{{-   $cfg = setValueAtPath "mcp_servers.yab-browser.args" (list "mcp") $cfg -}}
+{{-   $cfg = setValueAtPath "mcp_servers.yab-browser.tool_timeout_sec" 900 $cfg -}}
+{{-   $cfg = setValueAtPath "mcp_servers.yab-browser.default_tools_approval_mode" "approve" $cfg -}}
+{{- end -}}
+
+{{- if eq $before (toJson $cfg) -}}
+{{-   .chezmoi.stdin -}}
+{{- else -}}
+{{-   toToml $cfg -}}
+{{- end -}}
